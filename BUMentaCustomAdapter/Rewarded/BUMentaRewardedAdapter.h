@@ -6,10 +6,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <BUAdSDK/BUAdSDK.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface BUMentaRewardedAdapter : NSObject
+@interface BUMentaRewardedAdapter : NSObject <BUMCustomRewardedVideoAdapter>
 
 @end
 

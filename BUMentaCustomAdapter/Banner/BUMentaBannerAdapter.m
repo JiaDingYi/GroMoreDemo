@@ -24,11 +24,6 @@
 
 - (BUMMediatedAdStatus)mediatedAdStatus {
     BUMMediatedAdStatus status = BUMMediatedAdStatusNormal;
-    if (self.bannerAdView) {
-        status.isReady = BUMMediatedAdStatusValueSure;
-    } else {
-        status.isReady = BUMMediatedAdStatusValueDeny;
-    }
     return status;
 }
 
@@ -78,6 +73,9 @@
 - (void)menta_bannerAdMaterialDidLoad:(MentaUnifiedBannerAd *_Nonnull)bannerAd {
     NSLog(@"%s", __FUNCTION__);
     self.bannerAdView = [self.bannerAd fetchBannerView];
+    if (!self.ecpm) {
+        self.ecpm = @"";
+    }
     [self.bridge bannerAd:self didLoad:self.bannerAdView ext:@{
         BUMMediaAdLoadingExtECPM : self.ecpm,
     }];

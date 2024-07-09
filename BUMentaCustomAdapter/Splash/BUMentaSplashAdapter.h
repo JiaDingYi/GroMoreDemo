@@ -6,10 +6,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <BUAdSDK/BUAdSDK.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface BUMentaSplashAdapter : NSObject
+@interface BUMentaSplashAdapter : NSObject <BUMCustomSplashAdapter>
 
 @end
 
