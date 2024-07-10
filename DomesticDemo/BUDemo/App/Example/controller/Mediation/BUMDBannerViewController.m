@@ -71,6 +71,7 @@
     // [可选]混用信息流时可选配置：静音
     BUAdSlot *slot = [[BUAdSlot alloc] init];
     slot.ID = slotID;
+    slot.mediation.bidNotify = YES;
     slot.mediation.mutedIfCan = YES;
     
     self.bannerView = [[BUNativeExpressBannerView alloc] initWithSlot:slot rootViewController:self adSize:size];

@@ -122,6 +122,7 @@
     imgSize1.width = 1080;
     imgSize1.height = 1920;
     slot1.imgSize = imgSize1;
+    slot1.mediation.bidNotify = YES;
     
     slot1.ID = gromore_feed_ID;
     // 如果是模板广告，返回高度将不一定是300，而是按照414和对应代码位在平台的配置计算出的高度

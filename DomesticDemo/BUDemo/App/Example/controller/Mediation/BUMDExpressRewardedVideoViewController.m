@@ -54,6 +54,7 @@
 - (void)loadRewardVideoAdWithSlotID:(NSString *)slotID {
     BUAdSlot *adslot = [[BUAdSlot alloc] init];
     adslot.ID = slotID;
+    adslot.mediation.bidNotify = YES;
     // [可选]配置：设置是否静音
     adslot.mediation.mutedIfCan = NO;
     // [可选]配置：配置场景ID
