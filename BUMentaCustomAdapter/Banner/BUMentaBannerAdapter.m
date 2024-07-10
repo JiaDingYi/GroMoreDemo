@@ -49,7 +49,7 @@
 - (void)didReceiveBidResult:(BUMMediaBidResult *)result {
     // 在此处理Client Bidding的结果回调
     if (result.win) {
-        
+        [self.bannerAd sendWinNotification];
     } else {
         if (result.winnerPrice) {
             [self.bannerAd sendLossNotificationWithInfo:@{MU_M_L_WIN_PRICE : @(result.winnerPrice)}];

@@ -53,7 +53,7 @@
 - (void)didReceiveBidResult:(BUMMediaBidResult *)result {
     // 在此处理Client Bidding的结果回调
     if (result.win) {
-        
+        [self.rewardedVideo sendWinNotification];
     } else {
         if (result.winnerPrice) {
             [self.rewardedVideo sendLossNotificationWithInfo:@{MU_M_L_WIN_PRICE : @(result.winnerPrice)}];
