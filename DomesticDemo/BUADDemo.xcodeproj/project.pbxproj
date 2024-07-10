@@ -13,7 +13,6 @@
 		2BA662CE24C8244A00DDB519 /* libbz2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BA662CD24C8244A00DDB519 /* libbz2.tbd */; };
 		2BBCC22B2C008D650077DDA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BBCC2282C008D650077DDA1 /* Assets.xcassets */; };
 		2BC3B71A2A0B520D003A1AD2 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BC3B7192A0B520D003A1AD2 /* libsqlite3.tbd */; };
-		2BC3B71C2A0B5215003A1AD2 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BC3B71B2A0B5215003A1AD2 /* StoreKit.framework */; };
 		2BC3B71E2A0B521B003A1AD2 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BC3B71D2A0B521B003A1AD2 /* MediaPlayer.framework */; };
 		2BC3B7202A0B5222003A1AD2 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BC3B71F2A0B5222003A1AD2 /* AudioToolbox.framework */; };
 		2BC3B7222A0B5228003A1AD2 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BC3B7212A0B5228003A1AD2 /* AVFoundation.framework */; };
@@ -49,7 +48,6 @@
 		2BA662CD24C8244A00DDB519 /* libbz2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.tbd; path = usr/lib/libbz2.tbd; sourceTree = SDKROOT; };
 		2BBCC2282C008D650077DDA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2BC3B7192A0B520D003A1AD2 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
-		2BC3B71B2A0B5215003A1AD2 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		2BC3B71D2A0B521B003A1AD2 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		2BC3B71F2A0B5222003A1AD2 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		2BC3B7212A0B5228003A1AD2 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -99,7 +97,6 @@
 				2BC3B7222A0B5228003A1AD2 /* AVFoundation.framework in Frameworks */,
 				2BC3B7202A0B5222003A1AD2 /* AudioToolbox.framework in Frameworks */,
 				2BC3B71E2A0B521B003A1AD2 /* MediaPlayer.framework in Frameworks */,
-				2BC3B71C2A0B5215003A1AD2 /* StoreKit.framework in Frameworks */,
 				2BC3B71A2A0B520D003A1AD2 /* libsqlite3.tbd in Frameworks */,
 				2B9F5AE228D0BBEF00AE7F64 /* DeviceCheck.framework in Frameworks */,
 				680E4726271EF202001E50E7 /* AppTrackingTransparency.framework in Frameworks */,
@@ -187,7 +184,6 @@
 				2BC3B7212A0B5228003A1AD2 /* AVFoundation.framework */,
 				2BC3B71F2A0B5222003A1AD2 /* AudioToolbox.framework */,
 				2BC3B71D2A0B521B003A1AD2 /* MediaPlayer.framework */,
-				2BC3B71B2A0B5215003A1AD2 /* StoreKit.framework */,
 				2BC3B7192A0B520D003A1AD2 /* libsqlite3.tbd */,
 				2B9F5AE128D0BBEF00AE7F64 /* DeviceCheck.framework */,
 				680E4725271EF202001E50E7 /* AppTrackingTransparency.framework */,
@@ -244,7 +240,6 @@
 				78E072CA21A2C03C006D71EE /* Frameworks */,
 				78E072CB21A2C03C006D71EE /* Resources */,
 				565C8CB0BB92249747EF0308 /* [CP] Copy Pods Resources */,
-				98746A9588065CC2A99583E1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -320,23 +315,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Demo-BUADDemo/Pods-Demo-BUADDemo-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		98746A9588065CC2A99583E1 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Demo-BUADDemo/Pods-Demo-BUADDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Demo-BUADDemo/Pods-Demo-BUADDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Demo-BUADDemo/Pods-Demo-BUADDemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D104421B1E67501A272790CF /* [CP] Check Pods Manifest.lock */ = {
@@ -522,7 +500,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = FLKA4Y5X22;
+				DEVELOPMENT_TEAM = 3RTK89G5W5;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -538,7 +516,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 6.3.0.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.bytedance.ADUnion;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bytedance.ADUnion.zy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -552,7 +530,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = FLKA4Y5X22;
+				DEVELOPMENT_TEAM = 3RTK89G5W5;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -568,7 +546,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 6.3.0.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.bytedance.ADUnion;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bytedance.ADUnion.zy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
