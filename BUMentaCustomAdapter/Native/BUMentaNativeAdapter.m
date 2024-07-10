@@ -69,42 +69,7 @@
         self.nativeAd.delegate = self;
         
         [self.nativeAd loadAd];
-        
-        
-        
-        // 模拟加载非模板广告
-//        NSMutableArray *list = [NSMutableArray arrayWithCapacity:count];
-//        NSMutableArray *exts = [NSMutableArray arrayWithCapacity:count];
-//        for (int i = 0; i < count; i++) {
-//            BUMDCustomNativeData *data = [BUMDCustomNativeData randomDataWithImageSize:imageSize];
-//            __weak __typeof(self) ws = self;
-//            // 模拟广告点击事件
-//            data.didClickAction = ^(BUMDCustomNativeData * _Nonnull data) {
-//                __weak __typeof(ws) self = ws;
-//                [self.bridge nativeAd:self didClickWithMediatedNativeAd:data];
-//                [self.bridge nativeAd:self willPresentFullScreenModalWithMediatedNativeAd:data];
-//            };
-//            data.viewController = self.bridge.viewControllerForPresentingModalView;
-//            id<BUMMediatedNativeAdData, BUMMediatedNativeAdViewCreator> helper = [[BUMDCustomNativeAdHelper alloc] initWithAdData:data];
-//            // 构造需要返回GroMore的非模板广告数据
-//            BUMMediatedNativeAd *ad = [[BUMMediatedNativeAd alloc] init];
-//            ad.originMediatedNativeAd = data;
-//            ad.view = ({
-//                BUMDCustomNativeView *v = [[BUMDCustomNativeView alloc] init];
-//                v.didMoveToSuperViewCallback = ^(BUMDCustomNativeView * _Nonnull view) {
-//                    __weak __typeof(ws) self = ws;
-//                    [self.bridge nativeAd:self didVisibleWithMediatedNativeAd:data]; // 注意：使用原始广告数据
-//                }; v;
-//            });
-//            ad.viewCreator = helper;
-//            ad.data = helper;
-//            [list addObject:ad];
-//            [exts addObject:@{
-//                BUMMediaAdLoadingExtECPM : @"1000",
-//            }];
         }
-//        [self.bridge nativeAd:self didLoadWithNativeAds:[list copy] exts:exts.copy];
-//
 }
 
 - (void)registerContainerView:(nonnull __kindof UIView *)containerView andClickableViews:(nonnull NSArray<__kindof UIView *> *)views forNativeAd:(nonnull id)nativeAd {
