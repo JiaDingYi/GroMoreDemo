@@ -38,7 +38,9 @@
     NSInteger renderType = [parameter[BUMAdLoadingParamExpressAdType] integerValue];
     if (renderType == 1) { // 此处仅说明渲染类型可下发，开发者需根据实际定义情况编写
         if (self.nativeExpressAd) {
-            [self.nativeExpressAd destory];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.nativeExpressAd destory];
+            });
             self.nativeExpressAd.delegate = nil;
             self.nativeExpressAd = nil;
         }
@@ -69,7 +71,7 @@
         self.nativeAd.delegate = self;
         
         [self.nativeAd loadAd];
-        }
+    }
 }
 
 - (void)registerContainerView:(nonnull __kindof UIView *)containerView andClickableViews:(nonnull NSArray<__kindof UIView *> *)views forNativeAd:(nonnull id)nativeAd {
@@ -177,7 +179,7 @@
     [list addObject:nativeExpressAdObj.expressView];
     NSString *ecpm = [NSString stringWithFormat:@"%@", nativeExpressAdObj.price];
     [exts addObject:@{BUMMediaAdLoadingExtECPM : ecpm,}];
-    [self.bridge nativeAd:self didLoadWithNativeAds:[list copy] exts:exts.copy];
+    [self.bridge nativeAd:self didLoadWithExpressViews:[list copy] exts:exts.copy];
 }
 
 /**
