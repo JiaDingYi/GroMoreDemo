@@ -82,7 +82,7 @@
 
 /// 开屏加载失败
 - (void)menta_splashAd:(MentaUnifiedSplashAd *_Nonnull)splashAd didFailWithError:(NSError * _Nullable)error description:(NSDictionary *_Nonnull)description {
-    NSLog(@"%s", __FUNCTION__);
+    NSLog(@"%s- %@", __FUNCTION__, error);
     [self.bridge splashAd:self didLoadFailWithError:error ext:@{}];
 }
 
