@@ -72,25 +72,25 @@ Pod::Spec.new do |s|
   
   # 穿山甲相关的SDK
   s.subspec 'CSJRelateSDK' do |ss|
-    configuration = 'Release'
-    # if configuration == 'Develop'
-    #   ss.dependency 'BUAdSDK'
-    #   ss.dependency 'BUAdTestMeasurement'
-    #   ss.dependency 'CSJMediation'
-    # elsif configuration == 'Release'
-    #   ss.vendored_frameworks = 'SDK/BUAdSDK.xcframework', 'SDK/CSJMediation.xcframework', 'BUAdTestMeasurement/BUAdTestMeasurement.xcframework'
-    #   ss.resources = ['SDK/CSJAdSDK.bundle', 'BUAdTestMeasurement/BUAdTestMeasurement.bundle']
-    # elsif configuration == 'CN-Release'
-      # 正式版本
-      ss.dependency 'Ads-CN'
-      ss.dependency 'Ads-CN/CSJMediation'
-      ss.dependency 'BUAdTestMeasurement'
-    # elsif configuration == 'CN-Beta'
-    #   # 灰度版本
-    #   ss.dependency 'Ads-CN-Beta'
-    #   ss.dependency 'Ads-CN-Beta/CSJMediation'
-    #   ss.dependency 'BUAdTestMeasurement'
-    # end
+   configuration = 'CN-Beta'
+   if configuration == 'Develop'
+     ss.dependency 'BUAdSDK'
+     ss.dependency 'BUAdTestMeasurement'
+     ss.dependency 'CSJMediation'
+   elsif configuration == 'Release'
+     ss.vendored_frameworks = 'SDK/BUAdSDK.xcframework', 'SDK/CSJMediation.xcframework', 'BUAdTestMeasurement/BUAdTestMeasurement.xcframework'
+     ss.resources = ['SDK/CSJAdSDK.bundle', 'BUAdTestMeasurement/BUAdTestMeasurement.bundle']
+   elsif configuration == 'CN-Release'
+     # 正式版本
+     ss.dependency 'Ads-CN'
+     ss.dependency 'Ads-CN/CSJMediation'
+     ss.dependency 'BUAdTestMeasurement'
+   elsif configuration == 'CN-Beta'
+      # 灰度版本
+      ss.dependency 'Ads-CN-Beta'
+      ss.dependency 'Ads-CN-Beta/CSJMediation'
+      # ss.dependency 'BUAdTestMeasurement'
+   end
   end
   
 
