@@ -102,16 +102,17 @@
 //            [exts addObject:@{
 //                BUMMediaAdLoadingExtECPM : @"1000",
 //            }];
-//        }
+        }
 //        [self.bridge nativeAd:self didLoadWithNativeAds:[list copy] exts:exts.copy];
-    }
+//
 }
 
 - (void)registerContainerView:(nonnull __kindof UIView *)containerView andClickableViews:(nonnull NSArray<__kindof UIView *> *)views forNativeAd:(nonnull id)nativeAd {
-//    if ([nativeAd isKindOfClass:[BUMDCustomNativeData class]]) {
-//        BUMDCustomNativeData *ad = (BUMDCustomNativeData *)nativeAd;
-//        [ad registerClickableViews:views];
-//    }
+    if ([nativeAd isKindOfClass:[MentaNativeObject class]]) {
+        MentaNativeObject *ad = (MentaNativeObject *)nativeAd;
+        [containerView insertSubview:ad.nativeAdView atIndex:0];
+        [ad registerClickableViews:views closeableViews:@[]];
+    }
 }
 
 - (void)renderForExpressAdView:(nonnull UIView *)expressAdView {
@@ -161,7 +162,7 @@
 
 - (void)generateBuDataWith:(BUMentaNativeAdHelper *)helper {
     BUMMediatedNativeAd *ad = [[BUMMediatedNativeAd alloc] init];
-    ad.originMediatedNativeAd = self.nativeAdData.dataObject;
+    ad.originMediatedNativeAd = self.nativeAdData;
     ad.view = self.nativeAdData.nativeAdView;
     ad.viewCreator = helper;
     ad.data = helper;
@@ -261,23 +262,10 @@
 - (void)menta_nativeAdLoaded:(NSArray<MentaNativeObject *> * _Nullable)unifiedNativeAdDataObjects nativeAd:(MentaUnifiedNativeAd *_Nullable)nativeAd {
     NSLog(@"%s", __FUNCTION__);
     
-    //            id<BUMMediatedNativeAdData, BUMMediatedNativeAdViewCreator> helper = [[BUMDCustomNativeAdHelper alloc] initWithAdData:data];
-    //            // 构造需要返回GroMore的非模板广告数据
-    //            BUMMediatedNativeAd *ad = [[BUMMediatedNativeAd alloc] init];
-    //            ad.originMediatedNativeAd = data;
-    //            ad.view = ({
-    //                BUMDCustomNativeView *v = [[BUMDCustomNativeView alloc] init];
-    //                v.didMoveToSuperViewCallback = ^(BUMDCustomNativeView * _Nonnull view) {
-    //                    __weak __typeof(ws) self = ws;
-    //                    [self.bridge nativeAd:self didVisibleWithMediatedNativeAd:data]; // 注意：使用原始广告数据
-    //                }; v;
-    //            });
-    //            ad.viewCreator = helper;
-    //            ad.data = helper;
-    
     self.nativeAdData = unifiedNativeAdDataObjects.firstObject;
     if (self.nativeAdData.dataObject.isVideo) {
         id<BUMMediatedNativeAdData, BUMMediatedNativeAdViewCreator> helper = [[BUMentaNativeAdHelper alloc] initWithAdData:self.nativeAdData];
+        [self generateBuDataWith:helper];
     } else {
         [self downloadImgWith:self.nativeAdData.dataObject.materialList.firstObject.materialUrl];
     }
@@ -296,6 +284,7 @@
  */
 - (void)menta_nativeAdViewWillExpose:(MentaUnifiedNativeAd *_Nullable)nativeAd adView:(UIView<MentaNativeAdViewProtocol> *_Nonnull)adView {
     NSLog(@"%s", __FUNCTION__);
+    [self.bridge nativeAd:self didVisibleWithMediatedNativeAd:self.nativeAdData];
 }
 
 /**
@@ -305,8 +294,8 @@
  */
 - (void)menta_nativeAdViewDidClick:(MentaUnifiedNativeAd *_Nullable)nativeAd adView:(UIView<MentaNativeAdViewProtocol> *_Nullable)adView {
     NSLog(@"%s", __FUNCTION__);
-    [self.bridge nativeAd:self didClickWithMediatedNativeAd:self.nativeAdData.dataObject];
-    [self.bridge nativeAd:self willPresentFullScreenModalWithMediatedNativeAd:self.nativeAdData.dataObject];
+    [self.bridge nativeAd:self didClickWithMediatedNativeAd:self.nativeAdData];
+    [self.bridge nativeAd:self willPresentFullScreenModalWithMediatedNativeAd:self.nativeAdData];
 }
 
 /**

@@ -84,6 +84,10 @@
     return self.adLogo;
 }
 
+- (UIView *)mediaView {
+    return self.data.nativeAdView.mentaMediaView;
+}
+
 - (BUMMediatedNativeAdMode)imageMode {
     return BUMMediatedNativeAdModeLargeImage;
 }
