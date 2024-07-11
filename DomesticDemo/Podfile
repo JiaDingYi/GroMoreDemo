@@ -1,5 +1,5 @@
 # Uncomment the next line to define a global platform for your project
-platform :ios, '11.0'
+platform :ios, '12.0'
 
 workspace 'BUADDemo.xcworkspace'
 
@@ -17,39 +17,43 @@ abstract_target 'Demo' do
       
       
       
-      pod 'BUDemoSource', :path => '../'
+      pod 'BUDemoSource',         :path => '../'
       pod 'BUMentaCustomAdapter', :path => '../'
+      pod 'MentaVlionBaseSDK',    :path => '/Users/jdy/Desktop/Menta-iOS/MentaVlionBaseSDK.podspec'
+      pod 'MentaVlionSDK',        :path => '/Users/jdy/Desktop/Menta-iOS/MentaVlionSDK.podspec'
+      pod 'MentaUnifiedSDK',      :path => '/Users/jdy/Desktop/Menta-iOS/MentaUnifiedSDK.podspec'
+      pod 'MentaVlionAdapter',    :path => '/Users/jdy/Desktop/Menta-iOS/MentaVlionAdapter.podspec'
       
   
-      # 聚合维度其他家ADN的引入 版本支持请以”接入文档->前置说明“中为准，请不要更换GroMoreSDK不支持的三方sdk版本，引用了哪些adapter, 请相应地引入这些adapter对应的adn的广告SDK
-      # UnityAds
-      pod 'UnityAds', '4.3.0'
-      # Admob/GoogleAd
-      pod 'Google-Mobile-Ads-SDK', '10.0.0'
-      # 百度SDK
-      pod 'BaiduMobAdSDK', '5.352'
-      # 广点通/优量汇
-      pod 'GDTMobSDK', '4.14.80'
-      # SigmobAd
-      pod 'SigmobAd-iOS', '4.12.6'
-      # 快手
-      pod 'KSAdSDK', '3.3.64'
-      # 游可赢
-      # pod 'KlevinAdSDK', '2.11.0.211'
-      # MintegralAdSDK 使用时请务必使用cocoapod源
-      pod 'MintegralAdSDK', '7.6.3', :subspecs => [
-        'SplashAd',
-        'NewInterstitialAd',
-        'InterstitialVideoAd',
-        'RewardVideoAd',
-        'NativeAd',
-        'NativeAdvancedAd',
-        'BannerAd',
-        'BidNativeAd',
-        'BidNewInterstitialAd',
-        'BidInterstitialVideoAd',
-        'BidRewardVideoAd'
-      ]
+    #   # 聚合维度其他家ADN的引入 版本支持请以”接入文档->前置说明“中为准，请不要更换GroMoreSDK不支持的三方sdk版本，引用了哪些adapter, 请相应地引入这些adapter对应的adn的广告SDK
+    #   # UnityAds
+    #   pod 'UnityAds', '4.3.0'
+    #   # Admob/GoogleAd
+    #   pod 'Google-Mobile-Ads-SDK', '10.0.0'
+    #   # 百度SDK
+    #   pod 'BaiduMobAdSDK', '5.352'
+    #   # 广点通/优量汇
+    #   pod 'GDTMobSDK', '4.14.80'
+    #   # SigmobAd
+    #   pod 'SigmobAd-iOS', '4.12.6'
+    #   # 快手
+    #   pod 'KSAdSDK', '3.3.64'
+    #   # 游可赢
+    #   # pod 'KlevinAdSDK', '2.11.0.211'
+    #   # MintegralAdSDK 使用时请务必使用cocoapod源
+    #   pod 'MintegralAdSDK', '7.6.3', :subspecs => [
+    #     'SplashAd',
+    #     'NewInterstitialAd',
+    #     'InterstitialVideoAd',
+    #     'RewardVideoAd',
+    #     'NativeAd',
+    #     'NativeAdvancedAd',
+    #     'BannerAd',
+    #     'BidNativeAd',
+    #     'BidNewInterstitialAd',
+    #     'BidInterstitialVideoAd',
+    #     'BidRewardVideoAd'
+    #   ]
 
   
       end
@@ -58,7 +62,7 @@ end
 post_install do |pi|
     pi.pods_project.targets.each do |t|
         t.build_configurations.each do |config|
-            config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '9.0'
+            config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '12.0'
         end
     end
 end
