@@ -38,23 +38,23 @@ PODS:
     - BUDemoSource/MediationCustomAdapter
   - BUDemoSource/MediationCustomAdapter (1.0.0.0):
     - BUDemoSource/CSJRelateSDK
-  - BUMentaCustomAdapter (5.20.28):
+  - BUMentaCustomAdapter (5.20.31):
     - Ads-CN-Beta
     - Ads-CN-Beta/CSJMediation
-    - MentaUnifiedSDK (~> 5.20.28)
-    - MentaVlionAdapter (~> 5.20.28)
-    - MentaVlionBaseSDK (~> 5.20.28)
-    - MentaVlionSDK (~> 5.20.28)
+    - MentaUnifiedSDK (~> 5.20.31)
+    - MentaVlionAdapter (~> 5.20.31)
+    - MentaVlionBaseSDK (~> 5.20.31)
+    - MentaVlionSDK (~> 5.20.31)
   - Masonry (1.1.0)
   - MBProgressHUD (1.2.0)
-  - MentaUnifiedSDK (5.20.28):
-    - MentaVlionBaseSDK (~> 5.20.28)
-  - MentaVlionAdapter (5.20.28):
-    - MentaUnifiedSDK (~> 5.20.28)
-    - MentaVlionSDK (~> 5.20.28)
-  - MentaVlionBaseSDK (5.20.28)
-  - MentaVlionSDK (5.20.28):
-    - MentaVlionBaseSDK (~> 5.20.28)
+  - MentaUnifiedSDK (5.20.31):
+    - MentaVlionBaseSDK (~> 5.20.31)
+  - MentaVlionAdapter (5.20.31):
+    - MentaUnifiedSDK (~> 5.20.31)
+    - MentaVlionSDK (~> 5.20.31)
+  - MentaVlionBaseSDK (5.20.31)
+  - MentaVlionSDK (5.20.31):
+    - MentaVlionBaseSDK (~> 5.20.31)
   - MJRefresh (3.7.6)
   - SDWebImage (5.19.4):
     - SDWebImage/Core (= 5.19.4)
@@ -92,13 +92,13 @@ SPEC CHECKSUMS:
   Ads-CN-Beta: abc296ab020551ddbec4c36b9d13cd4c4d3a18bc
   AFNetworking: cb604b1c2bded0871f5f61f5d53653739e841d6b
   BUDemoSource: 30c23cf3c4805bf4061579e935649d3ee3385397
-  BUMentaCustomAdapter: f8335cedabe982035745710ac27a3437be63cb39
+  BUMentaCustomAdapter: 25db901fbd7a5099b38cf9a28363ac8b73b8b18a
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
-  MentaUnifiedSDK: 27311f6ff8f5c2773d4eb90fd0a1335ff2d7e0fd
-  MentaVlionAdapter: 424e761ff51cbbd14592e1835104f394643c9c51
-  MentaVlionBaseSDK: 2e170408c8624a5762d569939008dba68a02992a
-  MentaVlionSDK: 2e514a5adb5262399bbe8188299d74d61965c8c3
+  MentaUnifiedSDK: 40af2ae3c4b218b82d3f1fca3a3d7dcbac64b2d6
+  MentaVlionAdapter: aea13d960a6637180d1510939a7907a28f9de2bc
+  MentaVlionBaseSDK: 32b87ff48f102b3cbb92757f2182699f14ebda0a
+  MentaVlionSDK: 1d6d57c64d4b1c606f1305f6294d8f1ed579d74d
   MJRefresh: 2fe7fb43a5167ceda20bb7e63f130c04fd1814a5
   SDWebImage: 066c47b573f408f18caa467d71deace7c0f8280d
 
