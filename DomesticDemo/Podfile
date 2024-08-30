@@ -14,13 +14,23 @@ abstract_target 'Demo' do
     target 'BUADDemo' do
       project 'BUADDemo.xcodeproj'
       # 本target相较于BUADDemo Target多了聚合维度功能展示
+    #    pod 'MentaVlionSDK', "5.20.32.1"
+    #    pod 'BUMentaCustomAdapter', '5.20.32'
       
-      pod 'BUDemoSource',         :path => '../'
-      pod 'BUMentaCustomAdapter', :path => '../'
+       pod 'BUDemoSource',         :path => '../'
+       pod 'BUMentaCustomAdapter', :path => '../'
+     
 #      pod 'MentaVlionBaseSDK',    :path => '/Users/jdy/Desktop/Menta-iOS/MentaVlionBaseSDK.podspec'
 #      pod 'MentaVlionSDK',        :path => '/Users/jdy/Desktop/Menta-iOS/MentaVlionSDK.podspec'
 #      pod 'MentaUnifiedSDK',      :path => '/Users/jdy/Desktop/Menta-iOS/MentaUnifiedSDK.podspec'
 #      pod 'MentaVlionAdapter',    :path => '/Users/jdy/Desktop/Menta-iOS/MentaVlionAdapter.podspec'
+       
+    #    pod 'MentaVlionBaseSDK',    '5.20.34'
+    #    pod 'MentaUnifiedSDK',      '5.20.34'
+    #    pod 'MentaVlionSDK',        '5.20.34'
+    #    pod 'MentaVlionAdapter',    '5.20.34'
+    #    pod 'MentaJDYunAdapter',    '5.20.34'
+    #    pod 'MentaTanxAdapter',     '5.20.34'
         
       end
 end
