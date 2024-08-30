@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name             = 'BUMentaCustomAdapter'
-    s.version          = '5.20.32'
+    s.version          = '6.00.02'
     s.summary          = 'BUMentaCustomAdapter.podspec.'
     s.description      = 'This is the BUMentaCustomAdapter.podspec. Please proceed to https://www.mentamob.com for more information.'
     s.homepage         = 'https://www.mentamob.com/'
@@ -16,10 +16,10 @@ Pod::Spec.new do |s|
   
     s.source_files = 'BUMentaCustomAdapter/**/*'
 
-    s.dependency 'MentaVlionBaseSDK', '~> 5.20.32'
-    s.dependency 'MentaUnifiedSDK',   '~> 5.20.32'
-    s.dependency 'MentaVlionSDK',     '~> 5.20.32'
-    s.dependency 'MentaVlionAdapter', '~> 5.20.32'
+    s.dependency 'MentaVlionBaseSDK', '~> 6.00.02'
+    s.dependency 'MentaUnifiedSDK',   '~> 6.00.02'
+    s.dependency 'MentaVlionSDK',     '~> 6.00.02'
+    s.dependency 'MentaVlionAdapter', '~> 6.00.02'
     s.dependency 'Ads-CN-Beta'
     s.dependency 'Ads-CN-Beta/CSJMediation'
   
