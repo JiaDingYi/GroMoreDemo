@@ -21,9 +21,6 @@
 @property (nonatomic, strong) NSMutableArray *dataSource;
 @property (nonatomic, strong) UIButton *showAndRefreshAd;
 @property (nonatomic, strong) NSArray<BUNativeAd *> *nativeAdDataArray;
-
-@property (nonatomic, strong) UIView *couponSuspensionView;
-@property (nonatomic, strong) UIView *couponFlipView;
 @end
 
 @implementation BUMDFeedViewController
@@ -41,6 +38,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    // 弹幕功能使用相关
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didReceiveWidgetNotification:) name:BUMMediaAdWidgetViewCreateNotificationName object:nil];
     
     CGFloat width  = 300;
     CGFloat height = 60;
@@ -122,7 +122,6 @@
     imgSize1.width = 1080;
     imgSize1.height = 1920;
     slot1.imgSize = imgSize1;
-    slot1.mediation.bidNotify = YES;
     
     slot1.ID = gromore_feed_ID;
     // 如果是模板广告，返回高度将不一定是300，而是按照414和对应代码位在平台的配置计算出的高度
@@ -174,44 +173,57 @@
         [self.dataSource insertObject:model atIndex:index];
     }
     
-    // 优惠券功能使用相关
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didReceiveCouponNotification:) name:BUMMediaAdCouponViewCreateNotificationName object:nil];
-
     [self.tableView reloadData];
 }
 
-// 优惠券功能使用相关
-- (void)didReceiveCouponNotification:(NSNotification *)notify {
+- (void)didReceiveWidgetNotification:(NSNotification *)notify {
+    BUMAdViewWidget *widget = notify.userInfo[BUMMediaAdBarrageViewCreator];
+    if (widget) {
+        CGFloat x1 = 6;
+        CGFloat y1 = widget.adView.frame.size.height - 20;
+        CGRect newFrame1;
+        newFrame1.origin.x = x1;
+        newFrame1.origin.y = y1;
+        newFrame1.size.height = 100;
+        newFrame1.size.width = self.view.frame.size.width;
+        
+        UIView *barrageView = [widget renderWithFrame:newFrame1];
+        if (barrageView) {
+            [widget.adView addSubview:barrageView];
+        }
+    }
     
-    // 相关广告视图
-    UIView *adView = notify.userInfo[BUMMediaAdCouponAdView];
     
-    BUNativeCouponSuspensionType type1;
-    // 调用block,取suspensionView
-    BuildCouponSuspensionBlock suspensionBlock = notify.userInfo[BUMMediaAdCouponSuspensionViewCreator];
-    _couponSuspensionView = suspensionBlock(&type1);
+    BUMAdViewWidget *suspensionWidget = notify.userInfo[BUMMediaAdCouponSuspensionViewCreator];
+    if (suspensionWidget) {
+        BUMCouponType type1 = suspensionWidget.couponType;
+        // 调整尺寸 & 位置,添加到页面
+        CGFloat x2 = 6;
+        CGFloat y2 = widget.adView.frame.size.height - (type1 == BUMCouponSuspensionCard ?  124 : type1 == BUMCouponSuspensionIcon ? 102 : 102) - 20;
+        CGRect newFrame2 = widget.adView.frame;
+        newFrame2.origin.x = x2;
+        newFrame2.origin.y = y2;
+        
+        UIView *suspensionView = [suspensionWidget renderWithFrame:newFrame2];
+        if (suspensionView) {
+            [widget.adView addSubview:suspensionView];
+        }
+    }
     
-    // 调整尺寸 & 位置,添加到页面
-    CGFloat x1 = 6;
-    CGFloat y1 = adView.frame.size.height - (type1 == BUNativeCouponSuspensionCard ?  124 : type1 == BUNativeCouponSuspensionIcon ? 102 : 102) - 20;
-    CGRect newFrame1 = adView.frame;
-    newFrame1.origin.x = x1;
-    newFrame1.origin.y = y1;
-    _couponSuspensionView.frame = newFrame1;
-    [adView addSubview:_couponSuspensionView];
-
-    // 调用block,取flipView
-    BuildCouponFlipBlock flipBlock = notify.userInfo[BUMMediaAdCouponFlipViewCreator];
-    _couponFlipView = flipBlock(NULL);
     
-    // 调整尺寸 & 位置,添加到页面
-    CGFloat x = adView.frame.size.width - 154;
-    CGFloat y = adView.frame.size.height - 154;
-    CGRect newFrame = adView.frame;
-    newFrame.origin.x = x;
-    newFrame.origin.y = y;
-    _couponFlipView.frame = newFrame;
-    [adView addSubview:_couponFlipView];
+    BUMAdViewWidget *flipWidget = notify.userInfo[BUMMediaAdCouponFlipViewCreator];
+    if (flipWidget) {
+        // 调整尺寸 & 位置,添加到页面
+        CGFloat x = flipWidget.adView.frame.size.width - 154;
+        CGFloat y = flipWidget.adView.frame.size.height - 154;
+        CGRect newFrame = flipWidget.adView.frame;
+        newFrame.origin.x = x;
+        newFrame.origin.y = y;
+        UIView *flipView = [flipWidget renderWithFrame:newFrame];
+        if (flipView) {        
+            [widget.adView addSubview:flipView];
+        }
+    }
 }
 
 - (void)nativeAdsManager:(BUNativeAdsManager *)adsManager didFailWithError:(NSError *_Nullable)error {

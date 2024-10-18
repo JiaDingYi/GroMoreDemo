@@ -9,7 +9,6 @@
 #import "BUDSelectedView.h"
 #import "BUDSlotID.h"
 #import "UIColor+DarkMode.h"
-#import <Masonry/Masonry.h>
 
 #ifdef DEBUG
 
@@ -71,7 +70,6 @@
     // [可选]混用信息流时可选配置：静音
     BUAdSlot *slot = [[BUAdSlot alloc] init];
     slot.ID = slotID;
-    slot.mediation.bidNotify = YES;
     slot.mediation.mutedIfCan = YES;
     
     self.bannerView = [[BUNativeExpressBannerView alloc] initWithSlot:slot rootViewController:self adSize:size];
@@ -88,12 +86,6 @@
 
 - (void)showBanner {
     [self.view addSubview:self.bannerView];
-//    [self.bannerView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.centerX.equalTo(self.view.mas_centerX);
-//        make.bottom.equalTo(self.view.mas_safeAreaLayoutGuideBottom);
-//        make.width.mas_equalTo(300);
-//        make.height.mas_equalTo(200);
-//    }];
     self.selectedView.promptStatus = BUDPromptStatusDefault;
 }
 
@@ -141,7 +133,7 @@
 }
 
 - (void)pbud_logWithSEL:(SEL)sel msg:(NSString *)msg {
-    BUD_Log(@"kevin SDKDemoDelegate BUNativeExpressBannerView In VC (%@) extraMsg:%@", NSStringFromSelector(sel), msg);
+    BUD_Log(@"SDKDemoDelegate BUNativeExpressBannerView In VC (%@) extraMsg:%@", NSStringFromSelector(sel), msg);
 }
 
 - (void)nativeExpressBannerAdNeedLayoutUI:(BUNativeExpressBannerView *)bannerAd canvasView:(BUMCanvasView *)canvasView {

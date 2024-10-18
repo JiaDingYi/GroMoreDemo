@@ -48,7 +48,6 @@
     // 初始化广告加载对象
     BUAdSlot *slot = [[BUAdSlot alloc] init];
     slot.ID = slotID;
-    slot.mediation.bidNotify = YES;
     // [可选]配置：静音
     slot.mediation.mutedIfCan = YES;
     self.fullscreenAd = [[BUNativeExpressFullscreenVideoAd alloc] initWithSlot:slot];

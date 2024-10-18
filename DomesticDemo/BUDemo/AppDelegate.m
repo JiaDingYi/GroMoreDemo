@@ -21,9 +21,6 @@
 #import <AVFoundation/AVFoundation.h>
 #import <AppTrackingTransparency/AppTrackingTransparency.h>
 #import <AdSupport/ASIdentifierManager.h>
-#if __has_include(<BUAdLive/BUAdLive.h>)
-#import <BUAdLive/BUAdLive.h>
-#endif
 #if __has_include(<BUAdTestMeasurement/BUAdTestMeasurement.h>)
 #import <BUAdTestMeasurement/BUAdTestMeasurement.h>
 #endif
@@ -95,11 +92,10 @@
     configuration.privacyProvider = [[BUDPrivacyProvider alloc] init];
     configuration.appLogoImage = [UIImage imageNamed:@"AppIcon"];
     configuration.debugLog = @(1);
-    configuration.SDKDEBUG = YES;
     
     // 如果使用聚合维度功能，则务必将以下字段设置为YES
     // 并检查工程有引用CSJMediation.framework，这样SDK初始化时将启动聚合相关必要组件
-    configuration.useMediation = YES;
+    configuration.useMediation = NO;
     [self useMediationSettings];
     
     [BUAdSDKManager startWithAsyncCompletionHandler:^(BOOL success, NSError *error) {
@@ -112,9 +108,6 @@
 //                 private config for demo
                 [self configDemo];
 //                 Setup live stream ad
-#if __has_include(<BUAdLive/BUAdLive.h>)
-                [BUAdSDKManager setUpLiveAdSDK];
-#endif
                 
             });
         }

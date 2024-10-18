@@ -54,7 +54,6 @@
 - (void)loadRewardVideoAdWithSlotID:(NSString *)slotID {
     BUAdSlot *adslot = [[BUAdSlot alloc] init];
     adslot.ID = slotID;
-    adslot.mediation.bidNotify = YES;
     // [可选]配置：设置是否静音
     adslot.mediation.mutedIfCan = NO;
     // [可选]配置：配置场景ID
@@ -109,7 +108,6 @@
 - (void)nativeExpressRewardedVideoAdDidLoad:(BUNativeExpressRewardedVideoAd *)rewardedVideoAd {
     self.selectedView.promptStatus = BUDPromptStatusAdLoaded;
     BUD_Log(@"%st",__func__);
-    BUD_Log(@"mediaExt-%@",rewardedVideoAd.mediaExt);
 }
 
 - (void)nativeExpressRewardedVideoAd:(BUNativeExpressRewardedVideoAd *)rewardedVideoAd didFailWithError:(NSError *_Nullable)error {
@@ -131,6 +129,8 @@
     BUD_Log(@"%s",__func__);
     // 展示后可获取信息如下
     BUD_Log(@"%@", [rewardedVideoAd.mediation getShowEcpmInfo]);
+    
+    BUD_Log(@"mediaExt-%@",rewardedVideoAd.mediaExt);
 }
 
 - (void)nativeExpressRewardedVideoAdDidClose:(BUNativeExpressRewardedVideoAd *)rewardedVideoAd {

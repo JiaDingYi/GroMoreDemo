@@ -202,7 +202,7 @@
         cell.nativeAdRelatedView.videoAdView.delegate = self;
         [cell refreshUIWithModel:nativeAd];
         cell.nativeAdRelatedView.videoAdView.delegate = self;
-        [model registerContainer:cell withClickableViews:@[cell.creativeButton,cell.titleLabel,cell.descriptionLabel,cell.headImg]];
+        [model registerContainer:cell withClickableViews:@[cell.creativeButton,cell.titleLabel,cell.infoLabel,cell.headImg]];
         
         return cell;
     }else{

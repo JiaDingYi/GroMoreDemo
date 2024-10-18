@@ -84,7 +84,7 @@
 }
 
 - (void)setNativeAd:(BUNativeAd *)nativeAd {
-    self.infoLabel.text = nativeAd.data.AdDescription;
+    self.infoLabel.text = nativeAd.data.AdSource;
     self.titleLabel.text = nativeAd.data.AdTitle;
     self.imageView.hidden = YES;
     BUMaterialMeta *adMeta = nativeAd.data;
