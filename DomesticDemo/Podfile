@@ -17,8 +17,8 @@ abstract_target 'Demo' do
     #    pod 'MentaVlionSDK', "5.20.32.1"
     #    pod 'BUMentaCustomAdapter', '5.20.32'
       
-       pod 'BUDemoSource',         :path => '../'
-       pod 'BUMentaCustomAdapter', :path => '../'
+       pod 'FusionDemoSource',         :path => '../'
+       pod 'FusionMentaCustomAdapter', :path => '../'
      
 #      pod 'MentaVlionBaseSDK',    :path => '/Users/jdy/Desktop/Menta-iOS/MentaVlionBaseSDK.podspec'
 #      pod 'MentaVlionSDK',        :path => '/Users/jdy/Desktop/Menta-iOS/MentaVlionSDK.podspec'
