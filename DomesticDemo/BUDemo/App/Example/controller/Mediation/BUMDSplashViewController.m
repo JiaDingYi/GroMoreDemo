@@ -69,7 +69,7 @@
 - (void)buildupDefaultSplashView {
     // 配置广告信息项，以下仅展示部分功能
     BUAdSlot *slot = [[BUAdSlot alloc] init];
-    slot.ID = self.viewModel.slotID;
+    slot.ID = @"103010582";
     
     // [可选]配置：兜底方案，在配置拉取失败时会按照该方案进行广告加载
     slot.mediation.splashUserData = ({

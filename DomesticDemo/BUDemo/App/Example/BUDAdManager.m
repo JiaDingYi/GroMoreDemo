@@ -15,11 +15,7 @@
 @implementation BUDAdManager
 
 + (NSString *)appKey {
-    // xzj_test 更换其他的appId
-#if DEBUG
-//    return @"11111";
-#endif
-    return @"5000546";
+    return @"5576816";
 }
 
 @end

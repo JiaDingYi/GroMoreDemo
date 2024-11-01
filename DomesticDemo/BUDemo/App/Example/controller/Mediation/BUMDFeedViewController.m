@@ -123,7 +123,7 @@
     imgSize1.height = 1920;
     slot1.imgSize = imgSize1;
     
-    slot1.ID = gromore_feed_ID;
+    slot1.ID = @"103010783";
     // 如果是模板广告，返回高度将不一定是300，而是按照414和对应代码位在平台的配置计算出的高度
     slot1.adSize = CGSizeMake([UIScreen mainScreen].bounds.size.width, 400);
     // [可选]配置：静音
@@ -145,6 +145,13 @@
     self.nativeAdDataArray = nativeAdDataArray;
     
     for (BUNativeAd *model in nativeAdDataArray) {
+        
+        NSLog(@"AdTitle --- %@", model.data.AdTitle);
+        NSLog(@"AdDescription --- %@", model.data.AdDescription);
+        NSLog(@"imageView --- %@", model.mediation.canvasView.imageView);
+        NSLog(@"mediaView --- %@", model.mediation.canvasView.mediaView);
+        NSLog(@"adLogo --- %@", model.data.mediation.adLogo);
+        
         NSUInteger index = rand() % (self.dataSource.count - 3) + 2;
 
         model.rootViewController = self;

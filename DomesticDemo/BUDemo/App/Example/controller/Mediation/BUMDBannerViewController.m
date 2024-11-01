@@ -69,7 +69,7 @@
     // 初始化广告加载对象
     // [可选]混用信息流时可选配置：静音
     BUAdSlot *slot = [[BUAdSlot alloc] init];
-    slot.ID = slotID;
+    slot.ID = @"103010581";
     slot.mediation.mutedIfCan = YES;
     
     self.bannerView = [[BUNativeExpressBannerView alloc] initWithSlot:slot rootViewController:self adSize:size];

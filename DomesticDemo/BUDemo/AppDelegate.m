@@ -95,7 +95,7 @@
     
     // 如果使用聚合维度功能，则务必将以下字段设置为YES
     // 并检查工程有引用CSJMediation.framework，这样SDK初始化时将启动聚合相关必要组件
-    configuration.useMediation = NO;
+    configuration.useMediation = YES;
     [self useMediationSettings];
     
     [BUAdSDKManager startWithAsyncCompletionHandler:^(BOOL success, NSError *error) {
