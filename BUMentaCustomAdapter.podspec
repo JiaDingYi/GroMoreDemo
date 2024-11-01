@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name             = 'BUMentaCustomAdapter'
-    s.version          = '6.00.16'
+    s.version          = '6.00.16.1'
     s.summary          = 'BUMentaCustomAdapter.podspec.'
     s.description      = 'This is the BUMentaCustomAdapter.podspec. Please proceed to https://www.mentamob.com for more information.'
     s.homepage         = 'https://www.mentamob.com/'
