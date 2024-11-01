@@ -92,4 +92,13 @@
     return BUMMediatedNativeAdModeLargeImage;
 }
 
+#pragma mark - BUMMediatedNativeAdData
+- (NSString *)adTitle {
+    return self.data.dataObject.title;
+}
+
+- (NSString *)adDescription {
+    return self.data.dataObject.desc;
+}
+
 @end
