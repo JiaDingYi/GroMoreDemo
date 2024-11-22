@@ -1,8 +1,8 @@
 PODS:
-  - Ads-CN-Beta (6.5.0.4):
-    - Ads-CN-Beta/BUAdSDK (= 6.5.0.4)
-  - Ads-CN-Beta/BUAdSDK (6.5.0.4)
-  - Ads-CN-Beta/CSJMediation (6.5.0.4):
+  - Ads-CN-Beta (6.6.0.0):
+    - Ads-CN-Beta/BUAdSDK (= 6.6.0.0)
+  - Ads-CN-Beta/BUAdSDK (6.6.0.0)
+  - Ads-CN-Beta/CSJMediation (6.6.0.0):
     - Ads-CN-Beta/BUAdSDK
   - AFNetworking (3.2.1):
     - AFNetworking/NSURLSession (= 3.2.1)
@@ -38,27 +38,27 @@ PODS:
     - BUDemoSource/MediationCustomAdapter
   - BUDemoSource/MediationCustomAdapter (1.0.0.0):
     - BUDemoSource/CSJRelateSDK
-  - BUMentaCustomAdapter (6.00.16):
+  - BUMentaCustomAdapter (6.00.17):
     - Ads-CN-Beta
     - Ads-CN-Beta/CSJMediation
-    - MentaUnifiedSDK (~> 6.00.16)
-    - MentaVlionAdapter (~> 6.00.16)
-    - MentaVlionBaseSDK (~> 6.00.16)
-    - MentaVlionSDK (~> 6.00.16)
+    - MentaUnifiedSDK (~> 6.00.17)
+    - MentaVlionAdapter (~> 6.00.17)
+    - MentaVlionBaseSDK (~> 6.00.17.1)
+    - MentaVlionSDK (~> 6.00.17)
   - Masonry (1.1.0)
   - MBProgressHUD (1.2.0)
-  - MentaUnifiedSDK (6.00.16):
-    - MentaVlionBaseSDK (~> 6.00.16)
-  - MentaVlionAdapter (6.00.16):
-    - MentaUnifiedSDK (~> 6.00.16)
-    - MentaVlionSDK (~> 6.00.16)
-  - MentaVlionBaseSDK (6.00.16)
-  - MentaVlionSDK (6.00.16.1):
-    - MentaVlionBaseSDK (~> 6.00.16)
+  - MentaUnifiedSDK (6.00.17):
+    - MentaVlionBaseSDK (~> 6.00.17)
+  - MentaVlionAdapter (6.00.17):
+    - MentaUnifiedSDK (~> 6.00.17)
+    - MentaVlionSDK (~> 6.00.17)
+  - MentaVlionBaseSDK (6.00.17.1)
+  - MentaVlionSDK (6.00.17):
+    - MentaVlionBaseSDK (~> 6.00.17)
   - MJRefresh (3.7.6)
-  - SDWebImage (5.19.7):
-    - SDWebImage/Core (= 5.19.7)
-  - SDWebImage/Core (5.19.7)
+  - SDWebImage (5.20.0):
+    - SDWebImage/Core (= 5.20.0)
+  - SDWebImage/Core (5.20.0)
 
 DEPENDENCIES:
   - AFNetworking/UIKit (~> 3.0)
@@ -89,18 +89,18 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Ads-CN-Beta: 2434d909e7c2d311bd915c35e3cea84df9609389
+  Ads-CN-Beta: d5271285b2ee327dd2fb8b2db71f03e291069db0
   AFNetworking: cb604b1c2bded0871f5f61f5d53653739e841d6b
   BUDemoSource: 30c23cf3c4805bf4061579e935649d3ee3385397
-  BUMentaCustomAdapter: ca04dd70fc30211d8acc39deb6e261312e165d21
+  BUMentaCustomAdapter: 80cde61f670ebc27d1592e709bad6fb64601a7fb
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
-  MentaUnifiedSDK: 771ca75f4c9f596e1c73ea113c270213a8cae1df
-  MentaVlionAdapter: 2624649770bf69504d0cdca23c1537fcc0816fd0
-  MentaVlionBaseSDK: 4b03cf5c9bec990db252bfa9f92ebb5890c2e9f4
-  MentaVlionSDK: 1175d921b9638580954522432f2f2a50b54eb751
+  MentaUnifiedSDK: a71d77b11e7fcc10ee7d0e4b27ef99e91acacce8
+  MentaVlionAdapter: a39548a01d4bb5ebc2316749936d1863f5bac0ba
+  MentaVlionBaseSDK: aba416c482c1e6455d2f1edde7a8fc39d5419573
+  MentaVlionSDK: 80d6409adb8c4825dd52970ecf575f4e9e5e52cb
   MJRefresh: 2fe7fb43a5167ceda20bb7e63f130c04fd1814a5
-  SDWebImage: 8a6b7b160b4d710e2a22b6900e25301075c34cb3
+  SDWebImage: 73c6079366fea25fa4bb9640d5fb58f0893facd8
 
 PODFILE CHECKSUM: 77b2f5eda2679f70bd3ec4118e9979370f07cd68
 
