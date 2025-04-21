@@ -7,7 +7,7 @@
 
 #import "BUMentaNativeAdapter.h"
 #import "BUMentaNativeAdHelper.h"
-#import <MentaUnifiedSDK/MentaUnifiedSDK.h>
+#import <MentaUnifiedSDK/MentaUnifiedSDK-umbrella.h>
 #import <MentaVlionBaseSDK/MVYYWebImageManager.h>
 
 @interface BUMentaNativeAdapter () <MentaUnifiedNativeExpressAdDelegate, MentaUnifiedNativeAdDelegate>

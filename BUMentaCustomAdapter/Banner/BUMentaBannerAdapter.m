@@ -6,7 +6,7 @@
 //
 
 #import "BUMentaBannerAdapter.h"
-#import <MentaUnifiedSDK/MentaUnifiedSDK.h>
+#import <MentaUnifiedSDK/MentaUnifiedSDK-umbrella.h>
 
 @interface BUMentaBannerAdapter () <MentaUnifiedBannerAdDelegate>
 

@@ -6,7 +6,7 @@
 //
 
 #import "BUMentaSplashAdapter.h"
-#import <MentaUnifiedSDK/MentaUnifiedSDK.h>
+#import <MentaUnifiedSDK/MentaUnifiedSDK-umbrella.h>
 
 @interface BUMentaSplashAdapter () <MentaUnifiedSplashAdDelegate>
 @property (nonatomic, strong) MentaUnifiedSplashAd *splashAd;

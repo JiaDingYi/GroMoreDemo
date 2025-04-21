@@ -6,7 +6,7 @@
 //
 
 #import "BUMentaRewardedAdapter.h"
-#import <MentaUnifiedSDK/MentaUnifiedSDK.h>
+#import <MentaUnifiedSDK/MentaUnifiedSDK-umbrella.h>
 
 @interface BUMentaRewardedAdapter () <MentaUnifiedRewardVideoDelegate>
 @property (nonatomic, strong) MentaUnifiedRewardVideoAd *rewardedVideo;
