@@ -15,7 +15,7 @@
 @property (nonatomic, assign) NSTimeInterval lastLoadTimeInterval;
 
 @property (nonatomic, strong) MentaUnifiedBannerAd *bannerAd;
-@property (nonatomic, assign) UIView *bannerAdView;;
+@property (nonatomic, strong) UIView *bannerAdView;;
 @property (nonatomic, strong) NSString *ecpm;
 
 @end
