@@ -1,6 +1,6 @@
 # Uncomment the next line to define a global platform for your project
 source "https://github.com/CocoaPods/Specs.git"
-platform :ios, '11.0'
+platform :ios, '12.0'
 
 workspace 'BUADDemo.xcworkspace'
 
@@ -18,6 +18,11 @@ abstract_target 'Demo' do
 
     pod 'BUDemoSource',         :path => '../'
     pod 'BUMentaCustomAdapter', :path => '../'
+    pod 'MentaIFLYAdapter', '6.00.32'
+    pod 'MentaIqyAdapter', '6.00.32'
+    pod 'MentaJDYunAdapter', '6.00.32'
+    # pod 'MentaTanxAdapter', '6.00.32'
+    # pod 'MentaWangMaiAdapter', '6.00.32'
       
     #    pod 'FusionDemoSource',         :path => '../'
     #    pod 'FusionMentaCustomAdapter', :path => '../'

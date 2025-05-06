@@ -1,8 +1,8 @@
 PODS:
-  - Ads-CN-Beta (6.6.0.0):
-    - Ads-CN-Beta/BUAdSDK (= 6.6.0.0)
-  - Ads-CN-Beta/BUAdSDK (6.6.0.0)
-  - Ads-CN-Beta/CSJMediation (6.6.0.0):
+  - Ads-CN-Beta (6.4.1.0):
+    - Ads-CN-Beta/BUAdSDK (= 6.4.1.0)
+  - Ads-CN-Beta/BUAdSDK (6.4.1.0)
+  - Ads-CN-Beta/CSJMediation (6.4.1.0):
     - Ads-CN-Beta/BUAdSDK
   - AFNetworking (3.2.1):
     - AFNetworking/NSURLSession (= 3.2.1)
@@ -38,27 +38,39 @@ PODS:
     - BUDemoSource/MediationCustomAdapter
   - BUDemoSource/MediationCustomAdapter (1.0.0.0):
     - BUDemoSource/CSJRelateSDK
-  - BUMentaCustomAdapter (6.00.19):
-    - Ads-CN-Beta
-    - Ads-CN-Beta/CSJMediation
-    - MentaUnifiedSDK (~> 6.00.19)
-    - MentaVlionAdapter (~> 6.00.19)
-    - MentaVlionBaseSDK (~> 6.00.19)
-    - MentaVlionSDK (~> 6.00.19)
+  - BUMentaCustomAdapter (6.00.32):
+    - Ads-CN-Beta (= 6.4.1.0)
+    - Ads-CN-Beta/CSJMediation (= 6.4.1.0)
+    - MentaUnifiedSDK (~> 6.00.32)
+    - MentaVlionAdapter (~> 6.00.32)
+    - MentaVlionBaseSDK (~> 6.00.32)
+    - MentaVlionSDK (~> 6.00.32)
+  - JADYun (2.6.8)
   - Masonry (1.1.0)
   - MBProgressHUD (1.2.0)
-  - MentaUnifiedSDK (6.00.19):
-    - MentaVlionBaseSDK (~> 6.00.19)
-  - MentaVlionAdapter (6.00.19):
-    - MentaUnifiedSDK (~> 6.00.19)
-    - MentaVlionSDK (~> 6.00.19)
-  - MentaVlionBaseSDK (6.00.19)
-  - MentaVlionSDK (6.00.19.1):
-    - MentaVlionBaseSDK (~> 6.00.19)
+  - MentaIFLYAdapter (6.00.32):
+    - MentaIFLYSDK (= 4.5.0)
+    - MentaUnifiedSDK (~> 6.00.32)
+  - MentaIFLYSDK (4.5.0)
+  - MentaIqyAdapter (6.00.32):
+    - MentaUnifiedSDK (~> 6.00.32)
+    - QySdk (= 1.13.011)
+  - MentaJDYunAdapter (6.00.32):
+    - JADYun (= 2.6.8)
+    - MentaUnifiedSDK (~> 6.00.32)
+  - MentaUnifiedSDK (6.00.32):
+    - MentaVlionBaseSDK (~> 6.00.32)
+  - MentaVlionAdapter (6.00.32):
+    - MentaUnifiedSDK (~> 6.00.32)
+    - MentaVlionSDK (~> 6.00.32)
+  - MentaVlionBaseSDK (6.00.32)
+  - MentaVlionSDK (6.00.32):
+    - MentaVlionBaseSDK (~> 6.00.32)
   - MJRefresh (3.7.6)
-  - SDWebImage (5.20.0):
-    - SDWebImage/Core (= 5.20.0)
-  - SDWebImage/Core (5.20.0)
+  - QySdk (1.13.011)
+  - SDWebImage (5.21.0):
+    - SDWebImage/Core (= 5.21.0)
+  - SDWebImage/Core (5.21.0)
 
 DEPENDENCIES:
   - AFNetworking/UIKit (~> 3.0)
@@ -66,6 +78,9 @@ DEPENDENCIES:
   - BUMentaCustomAdapter (from `../`)
   - Masonry
   - MBProgressHUD
+  - MentaIFLYAdapter (= 6.00.32)
+  - MentaIqyAdapter (= 6.00.32)
+  - MentaJDYunAdapter (= 6.00.32)
   - MJRefresh
   - SDWebImage
 
@@ -73,13 +88,19 @@ SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Ads-CN-Beta
     - AFNetworking
+    - JADYun
     - Masonry
     - MBProgressHUD
+    - MentaIFLYAdapter
+    - MentaIFLYSDK
+    - MentaIqyAdapter
+    - MentaJDYunAdapter
     - MentaUnifiedSDK
     - MentaVlionAdapter
     - MentaVlionBaseSDK
     - MentaVlionSDK
     - MJRefresh
+    - QySdk
     - SDWebImage
 
 EXTERNAL SOURCES:
@@ -89,19 +110,25 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Ads-CN-Beta: d5271285b2ee327dd2fb8b2db71f03e291069db0
+  Ads-CN-Beta: ad2a25afa02c283328314f23a2358e9afa999dbe
   AFNetworking: cb604b1c2bded0871f5f61f5d53653739e841d6b
-  BUDemoSource: 30c23cf3c4805bf4061579e935649d3ee3385397
-  BUMentaCustomAdapter: 1c6162fed7298baf6d82b352fee4e11ba3429224
+  BUDemoSource: 66ce1f4ec1a54303888bbbed3305bcc0121a6307
+  BUMentaCustomAdapter: f47c01e4eddb1abbcd30a714bd56aa7de7b2c816
+  JADYun: fe7f107f9baa699ef768fd3bb74d2b0aee70bb48
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
-  MentaUnifiedSDK: 7db507335bc02da160fc77528d764e9371fb9753
-  MentaVlionAdapter: 7732f135e2d7bad1cf918661481f9a6311980616
-  MentaVlionBaseSDK: cbac7fc6f3fdea8ff26356376d4febee6edf974b
-  MentaVlionSDK: d5e7311e815623544bb38426bb006cd8d9fd58c8
+  MentaIFLYAdapter: 48c2517754b14cf107bdf0e34e4fd5ec6a89f94e
+  MentaIFLYSDK: 3926e959d5fd34734755340a21c28ea0a62c696f
+  MentaIqyAdapter: e18693c7a8182902ba4a77c08464f68b1b7c0323
+  MentaJDYunAdapter: 7cf287cd07d0199d8b74093952400870a476166e
+  MentaUnifiedSDK: 0846119a7ebfa118afb73f60b06dffe2c182cc6d
+  MentaVlionAdapter: e94ce63e17b28737b1b1e77745987a26b661d3bb
+  MentaVlionBaseSDK: bf11054870d6ccadb7b28840a2432d8347a65c64
+  MentaVlionSDK: 8226b117417f2d0521b34e058115f0ed28fe2c53
   MJRefresh: 2fe7fb43a5167ceda20bb7e63f130c04fd1814a5
-  SDWebImage: 73c6079366fea25fa4bb9640d5fb58f0893facd8
+  QySdk: 230aa41e2684e4691e458e70229acce1e2ceb4ae
+  SDWebImage: f84b0feeb08d2d11e6a9b843cb06d75ebf5b8868
 
-PODFILE CHECKSUM: 77b2f5eda2679f70bd3ec4118e9979370f07cd68
+PODFILE CHECKSUM: 2f0ab516e95fe278c8a8c24b5234e4c36ed79138
 
 COCOAPODS: 1.15.2
