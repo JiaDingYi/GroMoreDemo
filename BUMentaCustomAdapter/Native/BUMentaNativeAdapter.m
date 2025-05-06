@@ -56,20 +56,16 @@
         [self.nativeExpressAd loadAd];
         
     } else {
-        
         if (self.nativeAd) {
             self.nativeAd.delegate = nil;
             self.nativeAd = nil;
         }
-
         MUNativeConfig *config = [MUNativeConfig new];
         config.slotId = slotID;
         config.viewController = self.bridge.viewControllerForPresentingModalView;
         config.tolerateTime = 30;
-        
         self.nativeAd = [[MentaUnifiedNativeAd alloc] initWithConfig:config];
         self.nativeAd.delegate = self;
-        
         [self.nativeAd loadAd];
     }
 }

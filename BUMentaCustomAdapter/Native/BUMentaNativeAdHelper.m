@@ -22,7 +22,6 @@
     if (self = [super init]) {
         self.image = image;
         _data = data;
-        
         [self setupView];
     }
     return self;
@@ -31,7 +30,6 @@
 - (instancetype)initWithAdData:(MentaNativeObject *)data {
     if (self = [super init]) {
         _data = data;
-        
         [self setupView];
     }
     return self;
@@ -89,7 +87,11 @@
 }
 
 - (BUMMediatedNativeAdMode)imageMode {
-    return BUMMediatedNativeAdModeLargeImage;
+    if (self.data.dataObject.isVideo) {
+        return BUMMediatedNativeAdModePortraitVideo;
+    } else {
+        return BUMMediatedNativeAdModeLargeImage;
+    }
 }
 
 #pragma mark - BUMMediatedNativeAdData
