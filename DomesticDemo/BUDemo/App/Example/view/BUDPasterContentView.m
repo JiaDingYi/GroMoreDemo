@@ -96,7 +96,7 @@ static UIEdgeInsets const padding = {10, 15, 10, 15};
         self.buCustomVideoView = videoView;
     } else {    
         // 创建播放器视图
-        [self addSubview:self.nativeAdRelatedView.videoAdView];
+        [self addSubview:self.nativeAdRelatedView.mediaAdView];
     }
     
     UIImageView *imgV = [[UIImageView alloc] init];
@@ -115,7 +115,7 @@ static UIEdgeInsets const padding = {10, 15, 10, 15};
         NSString *url = model.data.videoUrl;
         [self.buCustomVideoView loadURL:[NSURL URLWithString:url]];
     } else {
-        self.nativeAdRelatedView.videoAdView.materialMeta = model.data;
+        self.nativeAdRelatedView.mediaAdView.materialMeta = model.data;
     }
     [self addSubview:self.nativeAdRelatedView.logoADImageView];
 
@@ -192,11 +192,11 @@ static UIEdgeInsets const padding = {10, 15, 10, 15};
     // 广告展位图
     const CGFloat imageHeight = contentWidth * (9.0 / 16.0);
     if ([self isVideoAd]) {
-        self.nativeAdRelatedView.videoAdView.hidden = NO;
+        self.nativeAdRelatedView.mediaAdView.hidden = NO;
         self.adImageView.hidden = YES;
-        self.nativeAdRelatedView.videoAdView.frame = CGRectMake(padding.left, y, contentWidth, imageHeight);
+        self.nativeAdRelatedView.mediaAdView.frame = CGRectMake(padding.left, y, contentWidth, imageHeight);
     } else if ([self isImageAd]) {
-        self.nativeAdRelatedView.videoAdView.hidden = YES;
+        self.nativeAdRelatedView.mediaAdView.hidden = YES;
         self.adImageView.hidden = NO;
         NSURL *url = [NSURL URLWithString:self.nativeAd.data.imageAry.firstObject.imageURL];
         [self.adImageView sd_setImageWithURL:url];
@@ -259,9 +259,9 @@ static UIEdgeInsets const padding = {10, 15, 10, 15};
     return self.buCustomVideoView;
 }
 
-- (BUVideoAdView *)SDKVideoView {
+- (BUMediaAdView *)SDKVideoView {
     if (self.nativeAdRelatedView) {
-        return self.nativeAdRelatedView.videoAdView;
+        return self.nativeAdRelatedView.mediaAdView;
     }
     return nil;
 }

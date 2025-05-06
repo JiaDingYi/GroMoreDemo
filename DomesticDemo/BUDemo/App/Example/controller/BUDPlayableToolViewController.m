@@ -134,10 +134,10 @@
     if (_playableUrlTextView.text.length) {
         NSString *playableUrl = _playableUrlTextView.text;
         playableUrl = [self bu_urlStringWithOriginUrlString:playableUrl appendString:@"&is_test_tool=1"];
-        [BUAdSDKPlayableToolManager setPlayableURL:playableUrl];
-        [BUAdSDKPlayableToolManager setDownloadUrl:_downloadUrlTextView.text];
-        [BUAdSDKPlayableToolManager setDeeplinkUrl:_deeplinkUrlTextView.text];
-        [BUAdSDKPlayableToolManager setIsLandScape:_isLandscapeSwitch.on];
+//        [BUAdSDKPlayableToolManager setPlayableURL:playableUrl];
+//        [BUAdSDKPlayableToolManager setDownloadUrl:_downloadUrlTextView.text];
+//        [BUAdSDKPlayableToolManager setDeeplinkUrl:_deeplinkUrlTextView.text];
+//        [BUAdSDKPlayableToolManager setIsLandScape:_isLandscapeSwitch.on];
         [self.rewardedVideoAd loadAdData];
         
     } else {

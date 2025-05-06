@@ -166,7 +166,7 @@
     // 隐私合规
     configuration.mediation.limitPersonalAds = @(0);
     configuration.mediation.limitProgrammaticAds = @(0);
-    configuration.mediation.forbiddenCAID = @(0);
+//    configuration.mediation.forbiddenCAID = @(0);
     // 提前导入配置
     
     NSString *config = [NSBundle csjDemoResource_pathForResource:@"GroMore-config-ios-5000546" ofType:@"json"];
