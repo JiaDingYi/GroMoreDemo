@@ -1,9 +1,12 @@
 PODS:
-  - Ads-CN-Beta (6.4.1.0):
-    - Ads-CN-Beta/BUAdSDK (= 6.4.1.0)
-  - Ads-CN-Beta/BUAdSDK (6.4.1.0)
-  - Ads-CN-Beta/CSJMediation (6.4.1.0):
-    - Ads-CN-Beta/BUAdSDK
+  - Ads-CN (6.8.0.7):
+    - Ads-CN/BUAdLive-Framework (= 6.8.0.7)
+    - Ads-CN/BUAdSDK (= 6.8.0.7)
+  - Ads-CN/BUAdLive-Framework (6.8.0.7):
+    - BUTTSDKFramework/LivePull-Lite (= 1.46.2.7-premium)
+  - Ads-CN/BUAdSDK (6.8.0.7)
+  - Ads-CN/CSJMediation (6.8.0.7):
+    - Ads-CN/BUAdSDK
   - AFNetworking (3.2.1):
     - AFNetworking/NSURLSession (= 3.2.1)
     - AFNetworking/Reachability (= 3.2.1)
@@ -31,20 +34,54 @@ PODS:
     - MJRefresh
     - SDWebImage
   - BUDemoSource/CSJRelateSDK (1.0.0.0):
-    - Ads-CN-Beta
-    - Ads-CN-Beta/CSJMediation
+    - Ads-CN
+    - Ads-CN/CSJMediation
   - BUDemoSource/Demo (1.0.0.0):
     - BUDemoSource/CSJDemoSource
     - BUDemoSource/MediationCustomAdapter
   - BUDemoSource/MediationCustomAdapter (1.0.0.0):
     - BUDemoSource/CSJRelateSDK
   - BUMentaCustomAdapter (6.00.32):
-    - Ads-CN-Beta (= 6.4.1.0)
-    - Ads-CN-Beta/CSJMediation (= 6.4.1.0)
+    - Ads-CN (= 6.8.0.7)
+    - Ads-CN/CSJMediation (= 6.8.0.7)
     - MentaUnifiedSDK (~> 6.00.32)
     - MentaVlionAdapter (~> 6.00.32)
     - MentaVlionBaseSDK (~> 6.00.32)
     - MentaVlionSDK (~> 6.00.32)
+  - BUTTSDKFramework/Core (1.46.2.7-premium)
+  - BUTTSDKFramework/LiveBase (1.46.2.7-premium):
+    - BUTTSDKFramework/Core
+    - BUTTSDKFramework/Reachability
+  - BUTTSDKFramework/LivePlayer/Base (1.46.2.7-premium):
+    - BUTTSDKFramework/Core
+    - BUTTSDKFramework/LiveBase
+    - BUTTSDKFramework/Reachability
+  - BUTTSDKFramework/LivePlayer/Lite (1.46.2.7-premium):
+    - BUTTSDKFramework/LivePlayer/Base
+    - BUTTSDKFramework/PlayerCore/LiveLite
+  - BUTTSDKFramework/LivePull-Lite (1.46.2.7-premium):
+    - BUTTSDKFramework/LivePlayer/Lite
+    - BUTTSDKFramework/Strategy/Lite
+  - BUTTSDKFramework/PlayerCore/Base (1.46.2.7-premium):
+    - BUTTSDKFramework/Core
+    - BUTTSDKFramework/Tools
+  - BUTTSDKFramework/PlayerCore/LiveLite (1.46.2.7-premium):
+    - BUTTSDKFramework/PlayerCore/Base
+    - BUTTSDKFramework/TTFFmpeg/LiveLite
+  - BUTTSDKFramework/Reachability (1.46.2.7-premium)
+  - BUTTSDKFramework/SSL (1.46.2.7-premium)
+  - BUTTSDKFramework/Strategy/Core (1.46.2.7-premium):
+    - BUTTSDKFramework/LiveBase
+    - BUTTSDKFramework/Reachability
+  - BUTTSDKFramework/Strategy/Lite (1.46.2.7-premium):
+    - BUTTSDKFramework/LivePlayer/Lite
+    - BUTTSDKFramework/Strategy/Core
+  - BUTTSDKFramework/Tools (1.46.2.7-premium):
+    - BUTTSDKFramework/SSL
+  - BUTTSDKFramework/TTFFmpeg/Base (1.46.2.7-premium):
+    - BUTTSDKFramework/Tools
+  - BUTTSDKFramework/TTFFmpeg/LiveLite (1.46.2.7-premium):
+    - BUTTSDKFramework/TTFFmpeg/Base
   - JADYun (2.6.8)
   - Masonry (1.1.0)
   - MBProgressHUD (1.2.0)
@@ -86,8 +123,9 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
-    - Ads-CN-Beta
+    - Ads-CN
     - AFNetworking
+    - BUTTSDKFramework
     - JADYun
     - Masonry
     - MBProgressHUD
@@ -110,10 +148,11 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Ads-CN-Beta: ad2a25afa02c283328314f23a2358e9afa999dbe
+  Ads-CN: a6bf4bef36e1ab50d7b77611031775e960d2d04d
   AFNetworking: cb604b1c2bded0871f5f61f5d53653739e841d6b
-  BUDemoSource: 66ce1f4ec1a54303888bbbed3305bcc0121a6307
-  BUMentaCustomAdapter: f47c01e4eddb1abbcd30a714bd56aa7de7b2c816
+  BUDemoSource: faf57e195493796c6bbdf65cda9ed668dac905b0
+  BUMentaCustomAdapter: 9fcdadf7cd542f3770cb551612a8d80f1391dada
+  BUTTSDKFramework: b5d45b40003335843f05088c2373cef0b5638a9e
   JADYun: fe7f107f9baa699ef768fd3bb74d2b0aee70bb48
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406

@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
   s.source       = { :git => "git@code.byted.org:TTIOS/tt_sdk_CSJ.git", :branch => 'v00000'}
   s.frameworks = "UIKit", "CoreFoundation"
   s.weak_frameworks = 'AppTrackingTransparency', 'CoreML', 'DeviceCheck'
-#  s.libraries = 'z', 'bz2', 'resolv.9', 'c++', 'sqlite3', 'xml2', 'iconv'
+  s.libraries = 'z', 'bz2', 'resolv.9', 'c++', 'sqlite3', 'xml2', 'iconv'
   
   s.requires_arc = true
 
@@ -72,7 +72,7 @@ Pod::Spec.new do |s|
   
   # 穿山甲相关的SDK
   s.subspec 'CSJRelateSDK' do |ss|
-   configuration = 'CN-Beta'
+   configuration = 'CN-Release'
    if configuration == 'Develop'
      ss.dependency 'BUAdSDK'
      ss.dependency 'BUAdTestMeasurement'
@@ -84,7 +84,7 @@ Pod::Spec.new do |s|
      # 正式版本
      ss.dependency 'Ads-CN'
      ss.dependency 'Ads-CN/CSJMediation'
-     ss.dependency 'BUAdTestMeasurement'
+    #  ss.dependency 'BUAdTestMeasurement'
    elsif configuration == 'CN-Beta'
       # 灰度版本
       ss.dependency 'Ads-CN-Beta'

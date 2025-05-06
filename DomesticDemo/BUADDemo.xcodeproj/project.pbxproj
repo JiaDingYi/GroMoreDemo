@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		095F90C52DC0C78500590DF2 /* libswiftCore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 095F90C42DC0C76800590DF2 /* libswiftCore.tbd */; };
 		2B08E58C24E6B74F00B58F2F /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B08E58B24E6B74F00B58F2F /* libxml2.tbd */; };
 		2B1D7D68255D238400787A7F /* libc++abi.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B1D7D67255D238400787A7F /* libc++abi.tbd */; };
 		2B9F5AE228D0BBEF00AE7F64 /* DeviceCheck.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B9F5AE128D0BBEF00AE7F64 /* DeviceCheck.framework */; };
@@ -42,6 +43,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		095F90C42DC0C76800590DF2 /* libswiftCore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libswiftCore.tbd; path = usr/lib/swift/libswiftCore.tbd; sourceTree = SDKROOT; };
 		2B08E58B24E6B74F00B58F2F /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
 		2B1D7D67255D238400787A7F /* libc++abi.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++abi.tbd"; path = "usr/lib/libc++abi.tbd"; sourceTree = SDKROOT; };
 		2B9F5AE128D0BBEF00AE7F64 /* DeviceCheck.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DeviceCheck.framework; path = System/Library/Frameworks/DeviceCheck.framework; sourceTree = SDKROOT; };
@@ -88,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				095F90C52DC0C78500590DF2 /* libswiftCore.tbd in Frameworks */,
 				2BC3B7322A0B8FFC003A1AD2 /* CoreTelephony.framework in Frameworks */,
 				2BC3B72C2A0B52CB003A1AD2 /* ImageIO.framework in Frameworks */,
 				2BC3B72A2A0B52C5003A1AD2 /* CoreText.framework in Frameworks */,
@@ -175,6 +178,7 @@
 		A9BB8904F5E2E508722AB9C2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				095F90C42DC0C76800590DF2 /* libswiftCore.tbd */,
 				2BC3B7312A0B8FFC003A1AD2 /* CoreTelephony.framework */,
 				2BC3B72B2A0B52CB003A1AD2 /* ImageIO.framework */,
 				2BC3B7292A0B52C5003A1AD2 /* CoreText.framework */,
@@ -240,6 +244,7 @@
 				78E072CA21A2C03C006D71EE /* Frameworks */,
 				78E072CB21A2C03C006D71EE /* Resources */,
 				565C8CB0BB92249747EF0308 /* [CP] Copy Pods Resources */,
+				0FC261038B67F67F40ACB2AD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -300,6 +305,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0FC261038B67F67F40ACB2AD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Demo-BUADDemo/Pods-Demo-BUADDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Demo-BUADDemo/Pods-Demo-BUADDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Demo-BUADDemo/Pods-Demo-BUADDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		565C8CB0BB92249747EF0308 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -500,7 +522,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3RTK89G5W5;
+				DEVELOPMENT_TEAM = 7TS7V48SA9;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -510,10 +532,14 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/BUDemo/PrefixHeader.pch";
 				INFOPLIST_FILE = BUDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)/usr/lib/swift",
 				);
 				MARKETING_VERSION = 6.3.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.bytedance.ADUnion.zy;
@@ -530,7 +556,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3RTK89G5W5;
+				DEVELOPMENT_TEAM = 7TS7V48SA9;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -540,10 +566,14 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/BUDemo/PrefixHeader.pch";
 				INFOPLIST_FILE = BUDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)/usr/lib/swift",
 				);
 				MARKETING_VERSION = 6.3.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.bytedance.ADUnion.zy;
