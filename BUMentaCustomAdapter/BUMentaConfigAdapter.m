@@ -22,9 +22,7 @@
     [MUAPI enableLog:YES];
     [MUAPI canUseIDFA:YES];
     
-    [MUAPI startWithAppID:initConfig.appID appKey:initConfig.appKey finishBlock:^(BOOL success, NSError * _Nullable error) {
-        
-    }];
+    [MUAPI startWithAppID:initConfig.appID appKey:initConfig.appKey finishBlock:^(BOOL success, NSError * _Nullable error) {}];
 }
 
 // adapter的版本号
@@ -44,5 +42,10 @@
 /// 收到配置更新请求时触发，如主题更新，初始化时设定配置不会触发，具体修改项需自行校验
 - (void)didReceiveConfigUpdateRequest:(BUMUserConfig *)config {
 }
+
+- (nonnull NSMutableDictionary *)adnInitInfo { 
+    return [NSMutableDictionary dictionary];
+}
+
 
 @end
