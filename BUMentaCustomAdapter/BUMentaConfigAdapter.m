@@ -6,7 +6,7 @@
 //
 
 #import "BUMentaConfigAdapter.h"
-#import <MentaUnifiedSDK/MentaUnifiedSDK-umbrella.h>
+#import <MentaUnifiedSDK/MUAPI.h>
 
 @implementation BUMentaConfigAdapter
 
