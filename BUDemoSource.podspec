@@ -72,7 +72,7 @@ Pod::Spec.new do |s|
   
   # 穿山甲相关的SDK
   s.subspec 'CSJRelateSDK' do |ss|
-   configuration = 'CN-Release'
+   configuration = 'CN-Beta'
    if configuration == 'Develop'
      ss.dependency 'BUAdSDK'
      ss.dependency 'BUAdTestMeasurement'
