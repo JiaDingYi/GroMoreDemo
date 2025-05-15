@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
     s.dependency 'MentaUnifiedSDK',   '~> 6.00.33'
     s.dependency 'MentaVlionSDK',     '~> 6.00.33'
     s.dependency 'MentaVlionAdapter', '~> 6.00.33'
-    s.dependency 'Ads-CN'
-    s.dependency 'Ads-CN/CSJMediation'
+    s.dependency 'Ads-CN-Beta'
+    s.dependency 'Ads-CN-Beta/CSJMediation'
   
   end
