@@ -18,19 +18,19 @@ abstract_target 'Demo' do
 
     pod 'BUDemoSource',         :path => '../'
     pod 'BUMentaCustomAdapter', :path => '../'
-    pod 'MentaIFLYAdapter', '6.00.32'
-    pod 'MentaIqyAdapter', '6.00.32'
-    pod 'MentaJDYunAdapter', '6.00.32'
+    # pod 'MentaIFLYAdapter', '6.00.32'
+    # pod 'MentaIqyAdapter', '6.00.32'
+    # pod 'MentaJDYunAdapter', '6.00.32'
     # pod 'MentaTanxAdapter', '6.00.32'
     # pod 'MentaWangMaiAdapter', '6.00.32'
       
     #    pod 'FusionDemoSource',         :path => '../'
     #    pod 'FusionMentaCustomAdapter', :path => '../'
      
-#      pod 'MentaVlionBaseSDK',    :path => '/Users/jdy/Desktop/Menta-iOS/MentaVlionBaseSDK.podspec'
-#      pod 'MentaVlionSDK',        :path => '/Users/jdy/Desktop/Menta-iOS/MentaVlionSDK.podspec'
-#      pod 'MentaUnifiedSDK',      :path => '/Users/jdy/Desktop/Menta-iOS/MentaUnifiedSDK.podspec'
-#      pod 'MentaVlionAdapter',    :path => '/Users/jdy/Desktop/Menta-iOS/MentaVlionAdapter.podspec'
+    #  pod 'MentaVlionBaseSDK',    :path => '/Users/jdy/Desktop/menta_inland/MentaVlionBaseSDK.podspec'
+    #  pod 'MentaVlionSDK',        :path => '/Users/jdy/Desktop/menta_inland/MentaVlionSDK.podspec'
+    #  pod 'MentaUnifiedSDK',      :path => '/Users/jdy/Desktop/menta_inland/MentaUnifiedSDK.podspec'
+    #  pod 'MentaVlionAdapter',    :path => '/Users/jdy/Desktop/menta_inland/MentaVlionAdapter.podspec'
        
     #    pod 'MentaVlionBaseSDK',    '5.20.34'
     #    pod 'MentaUnifiedSDK',      '5.20.34'
