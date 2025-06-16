@@ -65,6 +65,7 @@
         img.width = self.data.dataObject.materialList.firstObject.materialWidth;
         img.height = self.data.dataObject.materialList.firstObject.materialHeight;
         img.image = self.image;
+        img.imageURL = [NSURL URLWithString:self.data.dataObject.materialList.firstObject.materialUrl];
         return @[img];
     }
     return @[];
