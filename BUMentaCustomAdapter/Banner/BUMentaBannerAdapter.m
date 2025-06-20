@@ -97,7 +97,7 @@
 /// 横幅(banner)广告关闭了
 - (void)menta_bannerAdDidClose:(MentaUnifiedBannerAd *_Nonnull)bannerAd adView:(UIView *_Nullable)adView {
     NSLog(@"%s", __FUNCTION__);
-    [self.bridge bannerAd:self bannerView:adView didClosedWithDislikeWithReason:@[]];
+    [self.bridge bannerAd:self bannerView:adView didClosedWithDislikeWithReason:@[@"close"]];
 }
 
 /// 横幅(banner)将要展现
