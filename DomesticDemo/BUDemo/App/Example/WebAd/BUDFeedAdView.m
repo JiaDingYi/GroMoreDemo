@@ -626,9 +626,6 @@ static UIEdgeInsets const padding = { 10, 15, 10, 15 };
         if (type == BUInteractionTypeDownload) {
             [view.customBtn setTitle:@"点击下载" forState:UIControlStateNormal];
             [ad registerContainer:view withClickableViews:@[view.customBtn]];
-        } else if (type == BUInteractionTypePhone) {
-            [view.customBtn setTitle:@"拨打电话" forState:UIControlStateNormal];
-            [ad registerContainer:view withClickableViews:@[view.customBtn]];
         } else if (type == BUInteractionTypeURL) {
             [view.customBtn setTitle:@"外部拉起" forState:UIControlStateNormal];
             [ad registerContainer:view withClickableViews:@[view.customBtn]];

@@ -10,7 +10,7 @@
 #import "BUDMacros.h"
 #import "NSString+LocalizedString.h"
 #import "BUDFeedStyleHelper.h"
-#import "UIImageView+AFNetworking.h"
+#import <AFNetworking/UIImageView+AFNetworking.h>
 
 static CGFloat const margin = 15;
 static CGSize const logoSize = { 15, 15 };

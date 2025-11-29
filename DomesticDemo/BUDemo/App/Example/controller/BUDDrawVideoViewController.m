@@ -122,6 +122,7 @@
     BUD_Log(@"DrawVideo %s",__func__);
 }
 #pragma mark --- BUVideoAdViewDelegate
+
 - (void)videoAdViewFinishViewDidClick:(BUMediaAdView *)adView {
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
@@ -130,25 +131,25 @@
 #pragma clang diagnostic pop
 }
 /**
- This method is called when videoadview failed to play.
+ This method is called when video failed to play.
  @param error : the reason of error
  */
-- (void)videoAdView:(BUMediaAdView *)videoAdView didLoadFailWithError:(NSError *_Nullable)error {
+- (void)videoAdView:(BUMediaAdView *)adView didLoadFailWithError:(NSError *_Nullable)error {
     BUD_Log(@"DrawVideo %s",__func__);
 }
 
 /**
- This method is called when videoadview ready to play.
+ This method is called when video ready to play.
  */
-- (void)playerReadyToPlay:(BUMediaAdView *)videoAdView {
+- (void)playerReadyToPlay:(BUMediaAdView *)adView {
     BUD_Log(@"DrawVideo %s",__func__);
 }
 
 /**
- This method is called when videoadview playback status changed.
+ This method is called when video playback status changed.
  @param playerState : player state after changed
  */
-- (void)videoAdView:(BUMediaAdView *)videoAdView stateDidChanged:(BUPlayerPlayState)playerState {
+- (void)videoAdView:(BUMediaAdView *)adView stateDidChanged:(BUPlayerPlayState)playerState {
     BUD_Log(@"DrawVideo %s",__func__);
 }
 
@@ -157,22 +158,22 @@
  @param countDown : countdown of reward video rewards
  @Note : This method is only useful in China area.
  */
-- (void)videoAdView:(BUMediaAdView *)videoAdView rewardDidCountDown:(NSInteger)countDown {
+- (void)videoAdView:(BUMediaAdView *)adView rewardDidCountDown:(NSInteger)countDown {
     BUD_Log(@"DrawVideo %s",__func__);
 }
 
 
 /**
- This method is called when videoadview end of play.
+ This method is called when video end of play.
  */
-- (void)playerDidPlayFinish:(BUMediaAdView *)videoAdView {
+- (void)playerDidPlayFinish:(BUMediaAdView *)adView {
     BUD_Log(@"DrawVideo %s",__func__);
 }
 
 /**
- This method is called when videoadview is clicked.
+ This method is called when mediaAdView is clicked.
  */
-- (void)videoAdViewDidClick:(BUMediaAdView *)videoAdView {
+- (void)videoAdViewDidClick:(BUMediaAdView *)adView {
     BUD_Log(@"DrawVideo %s",__func__);
 }
 
@@ -180,7 +181,7 @@
  This method is called when another controller has been closed.
  @param interactionType : open appstore in app or open the webpage or view video ad details page.
  */
-- (void)videoAdViewDidCloseOtherController:(BUMediaAdView *)videoAdView interactionType:(BUInteractionType)interactionType {
+- (void)videoAdViewDidCloseOtherController:(BUMediaAdView *)adView interactionType:(BUInteractionType)interactionType {
     BUD_Log(@"DrawVideo %s",__func__);
 }
 

@@ -69,10 +69,8 @@
     self.rewardedVideoAd.delegate = self;
     // [可选]配置：激励再得的回调
     self.rewardedVideoAd.rewardPlayAgainInteractionDelegate = self.rewardedVideoAgainDelegateObj;
-    
-    [self.rewardedVideoAd loadAdData];
-    
     self.selectedView.promptStatus = BUDPromptStatusLoading;
+    [self.rewardedVideoAd loadAdData];
 }
 
 - (void)showRewardVideoAd {

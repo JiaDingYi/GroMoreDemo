@@ -204,11 +204,11 @@
 
 #pragma mark - BUVideoAdViewDelegate
 // 点击SDK播放器，弹出落地页
-- (void)videoAdViewDidClick:(BUMediaAdView *)videoAdView {
+- (void)videoAdViewDidClick:(BUMediaAdView *)adView {
     [self showLandingPage];
 }
 // 点击SDK播放器，弹出落地页后关闭落地页
-- (void)videoAdViewDidCloseOtherController:(BUMediaAdView *)videoAdView interactionType:(BUInteractionType)interactionType {
+- (void)videoAdViewDidCloseOtherController:(BUMediaAdView *)adView interactionType:(BUInteractionType)interactionType {
     [self hideLandingPage];
 }
 

@@ -13,19 +13,16 @@
 #import "BUDMacros.h"
 #import "NSString+LocalizedString.h"
 #import "UIView+Draw.h"
-#import "BUDAnimationTool.h"
 #import "UIColor+DarkMode.h"
 
 
-@interface BUMDSplashViewController () <BUMSplashAdDelegate, BUSplashCardDelegate, BUSplashZoomOutDelegate>
+@interface BUMDSplashViewController () <BUMSplashAdDelegate, BUSplashCardDelegate>
 
 @property (nonatomic, strong) BUSplashAd *splashAd;
 @property (nonatomic, strong) BUDNormalButton *button;
 @property (nonatomic, strong) BUDNormalButton *button1;
 
 @property (nonatomic, assign) CGRect splashFrame;
-
-@property (nonatomic, strong) BUSplashZoomOutView *zoomOutView;
 
 @end
 
@@ -69,7 +66,7 @@
 - (void)buildupDefaultSplashView {
     // 配置广告信息项，以下仅展示部分功能
     BUAdSlot *slot = [[BUAdSlot alloc] init];
-    slot.ID = @"103010582";
+    slot.ID = self.viewModel.slotID;
     
     // [可选]配置：兜底方案，在配置拉取失败时会按照该方案进行广告加载
     slot.mediation.splashUserData = ({
@@ -85,12 +82,9 @@
     // // 配置：回调代理对象。不支持中途更改代理，中途更改代理会导致接收不到广告相关回调，如若存在中途更改代理场景，需自行处理相关逻辑，确保广告相关回调正常执行。
     _splashAd.delegate = self;
     _splashAd.cardDelegate = self;
-    _splashAd.zoomOutDelegate = self;
     
     // [可选]配置：是否展示卡片视图，默认不开启，仅支持穿山甲广告
     _splashAd.supportCardView = YES;
-    // [可选]配置：是否支持ZoomOut
-    _splashAd.supportZoomOutView = YES;
 }
 
 - (void)buildupSplashViewWithBottomView {
@@ -188,21 +182,6 @@
     [self _pbud_logWithSEL:_cmd msg:@""];
 }
 
-#pragma mark - BUSplashZoomOutDelegate
-- (void)splashZoomOutReadyToShow:(nonnull BUSplashAd *)splashAd {
-    [self _pbud_logWithSEL:_cmd msg:@""];
-     if (splashAd.zoomOutView) {
-         [splashAd showZoomOutViewInRootViewController:[[[UIApplication sharedApplication] delegate] window].rootViewController];
-     }
-}
-
-- (void)splashZoomOutViewDidClick:(nonnull BUSplashAd *)splashAd {
-    [self _pbud_logWithSEL:_cmd msg:@""];
-}
-
-- (void)splashZoomOutViewDidClose:(nonnull BUSplashAd *)splashAd {
-    [self _pbud_logWithSEL:_cmd msg:@""];
-}
 
 @end
 

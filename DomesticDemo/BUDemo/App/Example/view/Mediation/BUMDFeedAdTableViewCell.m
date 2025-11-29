@@ -10,7 +10,7 @@
 #import <BUAdSDK/BUAdSDK.h>
 #import "BUDMacros.h"
 #import "NSString+LocalizedString.h"
-#import "UIImageView+AFNetworking.h"
+#import <AFNetworking/UIImageView+AFNetworking.h>
 #import "BUDFeedStyleHelper.h"
 
 static CGFloat const margin = 15;

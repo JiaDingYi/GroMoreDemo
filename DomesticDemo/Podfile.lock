@@ -1,12 +1,4 @@
 PODS:
-  - Ads-CN (6.8.0.7):
-    - Ads-CN/BUAdLive-Framework (= 6.8.0.7)
-    - Ads-CN/BUAdSDK (= 6.8.0.7)
-  - Ads-CN/BUAdLive-Framework (6.8.0.7):
-    - BUTTSDKFramework/LivePull-Lite (= 1.46.2.7-premium)
-  - Ads-CN/BUAdSDK (6.8.0.7)
-  - Ads-CN/CSJMediation (6.8.0.7):
-    - Ads-CN/BUAdSDK
   - AFNetworking (3.2.1):
     - AFNetworking/NSURLSession (= 3.2.1)
     - AFNetworking/Reachability (= 3.2.1)
@@ -24,6 +16,12 @@ PODS:
     - AFNetworking/NSURLSession
   - BUDemoSource (1.0.0.0):
     - BUDemoSource/Demo (= 1.0.0.0)
+  - BUDemoSource/BUMentaCustomAdapter (1.0.0.0):
+    - BUDemoSource/CSJRelateSDK
+    - MentaUnifiedSDK (~> 7.00.09)
+    - MentaVlionAdapter (~> 7.00.09)
+    - MentaVlionBaseSDK (~> 7.00.09)
+    - MentaVlionSDK (~> 7.00.09)
   - BUDemoSource/CSJDemoResource (1.0.0.0)
   - BUDemoSource/CSJDemoSource (1.0.0.0):
     - AFNetworking
@@ -33,84 +31,36 @@ PODS:
     - MBProgressHUD
     - MJRefresh
     - SDWebImage
-  - BUDemoSource/CSJRelateSDK (1.0.0.0):
-    - Ads-CN
-    - Ads-CN/CSJMediation
+  - BUDemoSource/CSJRelateSDK (1.0.0.0)
   - BUDemoSource/Demo (1.0.0.0):
+    - BUDemoSource/BUMentaCustomAdapter
     - BUDemoSource/CSJDemoSource
-    - BUDemoSource/MediationCustomAdapter
-  - BUDemoSource/MediationCustomAdapter (1.0.0.0):
-    - BUDemoSource/CSJRelateSDK
-  - BUMentaCustomAdapter (6.00.33):
-    - Ads-CN
-    - Ads-CN/CSJMediation
-    - MentaUnifiedSDK (~> 6.00.33)
-    - MentaVlionAdapter (~> 6.00.33)
-    - MentaVlionBaseSDK (~> 6.00.33)
-    - MentaVlionSDK (~> 6.00.33)
-  - BUTTSDKFramework/Core (1.46.2.7-premium)
-  - BUTTSDKFramework/LiveBase (1.46.2.7-premium):
-    - BUTTSDKFramework/Core
-    - BUTTSDKFramework/Reachability
-  - BUTTSDKFramework/LivePlayer/Base (1.46.2.7-premium):
-    - BUTTSDKFramework/Core
-    - BUTTSDKFramework/LiveBase
-    - BUTTSDKFramework/Reachability
-  - BUTTSDKFramework/LivePlayer/Lite (1.46.2.7-premium):
-    - BUTTSDKFramework/LivePlayer/Base
-    - BUTTSDKFramework/PlayerCore/LiveLite
-  - BUTTSDKFramework/LivePull-Lite (1.46.2.7-premium):
-    - BUTTSDKFramework/LivePlayer/Lite
-    - BUTTSDKFramework/Strategy/Lite
-  - BUTTSDKFramework/PlayerCore/Base (1.46.2.7-premium):
-    - BUTTSDKFramework/Core
-    - BUTTSDKFramework/Tools
-  - BUTTSDKFramework/PlayerCore/LiveLite (1.46.2.7-premium):
-    - BUTTSDKFramework/PlayerCore/Base
-    - BUTTSDKFramework/TTFFmpeg/LiveLite
-  - BUTTSDKFramework/Reachability (1.46.2.7-premium)
-  - BUTTSDKFramework/SSL (1.46.2.7-premium)
-  - BUTTSDKFramework/Strategy/Core (1.46.2.7-premium):
-    - BUTTSDKFramework/LiveBase
-    - BUTTSDKFramework/Reachability
-  - BUTTSDKFramework/Strategy/Lite (1.46.2.7-premium):
-    - BUTTSDKFramework/LivePlayer/Lite
-    - BUTTSDKFramework/Strategy/Core
-  - BUTTSDKFramework/Tools (1.46.2.7-premium):
-    - BUTTSDKFramework/SSL
-  - BUTTSDKFramework/TTFFmpeg/Base (1.46.2.7-premium):
-    - BUTTSDKFramework/Tools
-  - BUTTSDKFramework/TTFFmpeg/LiveLite (1.46.2.7-premium):
-    - BUTTSDKFramework/TTFFmpeg/Base
   - Masonry (1.1.0)
   - MBProgressHUD (1.2.0)
-  - MentaUnifiedSDK (6.00.33):
-    - MentaVlionBaseSDK (~> 6.00.33)
-  - MentaVlionAdapter (6.00.33):
-    - MentaUnifiedSDK (~> 6.00.33)
-    - MentaVlionSDK (~> 6.00.33)
-  - MentaVlionBaseSDK (6.00.33)
-  - MentaVlionSDK (6.00.33):
-    - MentaVlionBaseSDK (~> 6.00.33)
+  - MentaUnifiedSDK (7.00.09):
+    - MentaVlionBaseSDK (~> 7.00.09)
+  - MentaVlionAdapter (7.00.09):
+    - MentaUnifiedSDK (~> 7.00.09)
+    - MentaVlionSDK (~> 7.00.09)
+  - MentaVlionBaseSDK (7.00.09)
+  - MentaVlionSDK (7.00.09):
+    - MentaVlionBaseSDK (~> 7.00.09)
   - MJRefresh (3.7.6)
-  - SDWebImage (5.21.0):
-    - SDWebImage/Core (= 5.21.0)
-  - SDWebImage/Core (5.21.0)
+  - SDWebImage (5.21.4):
+    - SDWebImage/Core (= 5.21.4)
+  - SDWebImage/Core (5.21.4)
 
 DEPENDENCIES:
   - AFNetworking/UIKit (~> 3.0)
   - BUDemoSource (from `../`)
-  - BUMentaCustomAdapter (from `../`)
   - Masonry
   - MBProgressHUD
   - MJRefresh
   - SDWebImage
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
-    - Ads-CN
+  trunk:
     - AFNetworking
-    - BUTTSDKFramework
     - Masonry
     - MBProgressHUD
     - MentaUnifiedSDK
@@ -123,24 +73,19 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   BUDemoSource:
     :path: "../"
-  BUMentaCustomAdapter:
-    :path: "../"
 
 SPEC CHECKSUMS:
-  Ads-CN: a6bf4bef36e1ab50d7b77611031775e960d2d04d
   AFNetworking: cb604b1c2bded0871f5f61f5d53653739e841d6b
-  BUDemoSource: faf57e195493796c6bbdf65cda9ed668dac905b0
-  BUMentaCustomAdapter: bdec5b5028adf8227d6e6da4fee115d40dff47d2
-  BUTTSDKFramework: b5d45b40003335843f05088c2373cef0b5638a9e
+  BUDemoSource: c17740613be0ada10955402d50d96eaf3627ccd0
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
-  MentaUnifiedSDK: e6166edcefaf4b4da3794be65d5905fd3dbd55b0
-  MentaVlionAdapter: 93a97184c0d9c8ad6ebed07cfc2c0e0a923390cf
-  MentaVlionBaseSDK: d5d618baa6ee815ba08d21fd19db5da7eceb0aba
-  MentaVlionSDK: b4811a9ba2bcc5a996b8492f73915e112462170e
+  MentaUnifiedSDK: 67bc3d2daca03bb7be6d8f3e13e7aa4332b0c017
+  MentaVlionAdapter: ed1d904936d61e6024f4d43bc0bd1ccf58308f47
+  MentaVlionBaseSDK: 2c0d28c64bdf8205452352c34296723e458adfa5
+  MentaVlionSDK: b105de36542245a57b9376b4cb7d9d0f7aa4b758
   MJRefresh: 2fe7fb43a5167ceda20bb7e63f130c04fd1814a5
-  SDWebImage: f84b0feeb08d2d11e6a9b843cb06d75ebf5b8868
+  SDWebImage: d0184764be51240d49c761c37f53dd017e1ccaaf
 
-PODFILE CHECKSUM: e7a697de632b10e877adb274ac5f4807456f820d
+PODFILE CHECKSUM: 2755b26bcdbf8e179071fad19527926bb2cf426e
 
-COCOAPODS: 1.15.2
+COCOAPODS: 1.16.2

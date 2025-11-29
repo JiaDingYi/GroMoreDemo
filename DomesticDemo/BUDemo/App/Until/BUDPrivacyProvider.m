@@ -33,6 +33,10 @@
     // "1": 允许
     // 其他值或不实现该协议方法认为允许采集
     [privacy setObject:@"1" forKey:@"motion_info"];
+
+    // forbidden_idfa表示是否禁止idfa采集，"1"表示禁止
+    [privacy setObject:@"0" forKey:@"forbidden_idfa"];
+
     return [privacy copy];
 }
 

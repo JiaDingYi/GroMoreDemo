@@ -9,6 +9,11 @@
 #ifndef BUDSlotID_h
 #define BUDSlotID_h
 
+
+#define express_splash_ID                 @"103660850"
+#define express_feed_ID                   @"103661534"
+
+
 // SDK
 #define normal_banner_ID                  @"900546859"
 #define normal_interstitial_ID            @"900546957"
@@ -19,14 +24,14 @@
 #define normal_splash_ID                  @"800546808"
 
 #define native_feed_ID                    @"900546910"
-#define native_feed_image_ID              @"945019352" //This id 
+#define native_feed_image_ID              @"945019352" //This id
 #define native_draw_ID                    @"900546588"
 #define native_banner_ID                  @"900546687"
 #define native_interstitial_ID            @"900546829"
 #define native_imagePortrait_ID           @"900546264"
 #define native_feed_custom_player_ID      @"900546910"
 #define native_paster_player_ID           @"945593048"
-
+#define native_feed_ecmall_ID             @"960119237" // 商城页
 // 聚合测试广告位ID
 #define gromore_reward_landscape_ID       @"945494739" //聚合激励视频广告位（BURewardedVideoAd && BUNativeExpressRewardedVideoAd）
 #define gromore_splash_ID_2               @"887383142"
@@ -40,7 +45,6 @@
 #define gromore_banner_ID                 @"945494753" //聚合banner广告位 （BUNativeExpressBannerView）
 
 /// 带_both代表海外国内通用的rit
-#define express_feed_ID                   @"945113159"
 //#define express_feed_video_ID             @"900546510"
 #define express_feed_video_ID             @"945294189"
 #define express_draw_ID                   @"900546881"
@@ -53,7 +57,6 @@
 #define express_banner_ID_600300          @"945509789" ///3400 change
 #define express_banner_ID_600400_both     @"945509785" ///3400 change
 #define express_banner_ID_600500_both     @"945509778" ///3400 change
-#define express_splash_ID                 @"800546851"
 #define express_full_ID_both              @"945113164"
 #define express_full_landscape_ID_both    @"945113165"
 #define express_reward_ID_both            @"945113162"

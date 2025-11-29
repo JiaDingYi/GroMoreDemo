@@ -15,7 +15,7 @@
 @implementation BUDAdManager
 
 + (NSString *)appKey {
-    return @"5576816";
+    return @"5576909";
 }
 
 @end

@@ -9,8 +9,8 @@ Pod::Spec.new do |s|
   s.platform     = :ios, "10.0"
   s.source       = { :git => "git@code.byted.org:TTIOS/tt_sdk_CSJ.git", :branch => 'v00000'}
   s.frameworks = "UIKit", "CoreFoundation"
-  s.weak_frameworks = 'AppTrackingTransparency', 'CoreML', 'DeviceCheck'
-  s.libraries = 'z', 'bz2', 'resolv.9', 'c++', 'sqlite3', 'xml2', 'iconv'
+  s.weak_frameworks = 'AppTrackingTransparency', 'CoreML', 'DeviceCheck', 'CoreHaptics'
+#  s.libraries = 'z', 'bz2', 'resolv.9', 'c++', 'sqlite3', 'xml2', 'iconv'
   
   s.requires_arc = true
 
@@ -23,7 +23,7 @@ Pod::Spec.new do |s|
   s.subspec 'Demo' do |ss|
     
     ss.dependency 'BUDemoSource/CSJDemoSource'
-    ss.dependency 'BUDemoSource/MediationCustomAdapter'
+    ss.dependency 'BUDemoSource/BUMentaCustomAdapter'
     
   end
   
@@ -53,12 +53,16 @@ Pod::Spec.new do |s|
   end
   
   # Gromore 相关的代码
-  s.subspec 'MediationCustomAdapter' do |ss|
+  s.subspec 'BUMentaCustomAdapter' do |ss|
 
-    ss.public_header_files = "MediationCustomAdapter/**/*.h"
-    ss.source_files = "MediationCustomAdapter/**/*.{h,m,a,c,mm,pch}"
+    ss.public_header_files = "BUMentaCustomAdapter/**/*.h"
+    ss.source_files = "BUMentaCustomAdapter/**/*.{h,m,a,c,mm,pch}"
     
     ss.dependency 'BUDemoSource/CSJRelateSDK'
+    ss.dependency 'MentaVlionBaseSDK', '~> 7.00.09'
+    ss.dependency 'MentaUnifiedSDK',   '~> 7.00.09'
+    ss.dependency 'MentaVlionSDK',     '~> 7.00.09'
+    ss.dependency 'MentaVlionAdapter', '~> 7.00.09'
   end
   
   # Demo 需要的资源文件
@@ -70,27 +74,17 @@ Pod::Spec.new do |s|
     }
   end
   
-  # 穿山甲相关的SDK
+  # 穿山甲相关的SDK（即Ads-CN，这里是本地依赖）
   s.subspec 'CSJRelateSDK' do |ss|
-   configuration = 'CN-Beta'
-   if configuration == 'Develop'
-     ss.dependency 'BUAdSDK'
-     ss.dependency 'BUAdTestMeasurement'
-     ss.dependency 'CSJMediation'
-   elsif configuration == 'Release'
-     ss.vendored_frameworks = 'SDK/BUAdSDK.xcframework', 'SDK/CSJMediation.xcframework', 'BUAdTestMeasurement/BUAdTestMeasurement.xcframework'
-     ss.resources = ['SDK/CSJAdSDK.bundle', 'BUAdTestMeasurement/BUAdTestMeasurement.bundle']
-   elsif configuration == 'CN-Release'
-     # 正式版本
-     ss.dependency 'Ads-CN'
-     ss.dependency 'Ads-CN/CSJMediation'
-    #  ss.dependency 'BUAdTestMeasurement'
-   elsif configuration == 'CN-Beta'
-      # 灰度版本
-      ss.dependency 'Ads-CN-Beta'
-      ss.dependency 'Ads-CN-Beta/CSJMediation'
-      # ss.dependency 'BUAdTestMeasurement'
-   end
+    configuration = 'Release'
+    if configuration == 'Develop'
+      ss.dependency 'BUAdSDK'
+      ss.dependency 'BUAdTestMeasurement'
+      ss.dependency 'CSJMediation'
+    elsif configuration == 'Release'
+      ss.vendored_frameworks = 'SDK/BUAdSDK.xcframework', 'SDK/CSJMediation.xcframework', 'SDK/BUAdTestMeasurement.xcframework'
+      ss.resources = ['SDK/CSJAdSDK.bundle', 'SDK/BUAdTestMeasurement.bundle']
+    end
   end
   
 

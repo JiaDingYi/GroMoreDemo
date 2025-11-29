@@ -69,7 +69,7 @@
     // 初始化广告加载对象
     // [可选]混用信息流时可选配置：静音
     BUAdSlot *slot = [[BUAdSlot alloc] init];
-    slot.ID = @"103010581";
+    slot.ID = slotID;
     slot.mediation.mutedIfCan = YES;
     
     self.bannerView = [[BUNativeExpressBannerView alloc] initWithSlot:slot rootViewController:self adSize:size];
@@ -80,8 +80,8 @@
     // 轮播相关配置需要在平台配置
     
     // 开始加载广告
-    [self.bannerView loadAdData];
     self.selectedView.promptStatus = BUDPromptStatusLoading;
+    [self.bannerView loadAdData];
 }
 
 - (void)showBanner {

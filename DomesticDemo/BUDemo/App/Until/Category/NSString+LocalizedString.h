@@ -47,7 +47,6 @@ extern NSString * const CustomClick;
 extern NSString * const Detail;
 extern NSString * const DownloadLinks;
 extern NSString * const URLLinks;
-extern NSString * const ShowPlayable;
 extern NSString * const IsLandScape;
 extern NSString * const IsCarousel;
 extern NSString * const Vertical;
@@ -95,7 +94,7 @@ extern NSString * const kUgenoLUPage3;
 extern NSString * const kUgenoStreet1;
 extern NSString * const kUgenoStreet2;
 extern NSString * const kUgenoStreet3;
-
+extern NSString * const kECMallView;
 extern NSString * const kMSplashAd;
 extern NSString * const kMBannerAd;
 extern NSString * const kMRewardVideoAd;

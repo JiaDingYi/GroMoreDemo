@@ -19,7 +19,7 @@
 #ifdef DEBUG
 #import <MBProgressHUD/MBProgressHUD.h>
 #endif
-@interface BUDFeedViewController () <UITableViewDataSource, UITableViewDelegate, BUNativeAdsManagerDelegate, BUVideoAdViewDelegate,BUNativeAdDelegate,BUNativeExpressAdViewDelegate, BUDFeedCustomDislikeDelgate>
+@interface BUDFeedViewController () <UITableViewDataSource, UITableViewDelegate, BUNativeAdsManagerDelegate, BUVideoAdViewDelegate,BUNativeAdDelegate,BUNativeExpressAdViewDelegate, BUDFeedCustomDislikeDelgate,BUCustomEventProtocol>
 @property (strong, nonatomic) UITableView *tableView;
 @property (nonatomic, strong) BUNativeAdsManager *adManager;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
@@ -278,9 +278,6 @@
             if (type == BUInteractionTypeDownload) {
                 [cell.customBtn setTitle:[NSString localizedStringForKey:ClickDownload] forState:UIControlStateNormal];
                 [nativeAd registerContainer:cell withClickableViews:@[cell.customBtn]];
-//            } else if (type == BUInteractionTypePhone) {
-//                [cell.customBtn setTitle:[NSString localizedStringForKey:Call] forState:UIControlStateNormal];
-//                [nativeAd registerContainer:cell withClickableViews:@[cell.customBtn]];
             } else if (type == BUInteractionTypeURL) {
                 [cell.customBtn setTitle:[NSString localizedStringForKey:ExternalLink] forState:UIControlStateNormal];
                 [nativeAd registerContainer:cell withClickableViews:@[cell.customBtn]];
@@ -471,10 +468,13 @@
     [dataSources removeObject:nativeAd];
     self.dataSource = [dataSources copy];
     [self.tableView reloadData];
+    [self pbud_logWithSEL:_cmd prefix:@"BUNativeAdDelegate" msg:@""];
 }
 
 #pragma mark - BUVideoAdViewDelegate
+
 - (void)videoAdView:(BUMediaAdView *)adView stateDidChanged:(BUPlayerPlayState)playerState {
+    
     [self pbud_logWithSEL:_cmd prefix:@"BUVideoAdViewDelegate" msg:[NSString stringWithFormat:@"playerState:%ld", (long)playerState]];
 }
 
@@ -494,12 +494,18 @@
     [self pbud_logWithSEL:_cmd prefix:@"BUVideoAdViewDelegate" msg:@""];
 }
 
+
 - (void)videoAdViewDidCloseOtherController:(BUMediaAdView *)adView interactionType:(BUInteractionType)interactionType {
     [self pbud_logWithSEL:_cmd prefix:@"BUVideoAdViewDelegate" msg:[NSString stringWithFormat:@"interactionType:%ld", (long)interactionType]];
 }
 
-- (void)videoAdView:(BUMediaAdView *)adView rewardDidCountDown:(NSInteger)countDown {
+- (void)videoAdView:(BUMediaAdView *)videoAdView
+ rewardDidCountDown:(NSInteger)countDown {
     [self pbud_logWithSEL:_cmd prefix:@"BUVideoAdViewDelegate" msg:[NSString stringWithFormat:@"videoAdView:rewardDidCountDown:%ld", (long)countDown]];
+}
+
+- (void)nativeAd:(BUNativeAd *_Nullable)nativeAd onEventCode:(NSInteger)code info:(NSDictionary *)info {
+    [self pbud_logWithSEL:_cmd prefix:@"BUCustomEventProtocol" msg:[NSString stringWithFormat:@"code = %ld info = %@",code,info]];
 }
 
 #pragma mark - Log

@@ -16,7 +16,6 @@
 #import "BUDMacros.h"
 #import "BUDSlotID.h"
 #import "BUDTestToolsViewController.h"
-#import "BUDAnimationTool.h"
 #import "BUDPrivacyProvider.h"
 #import <AVFoundation/AVFoundation.h>
 #import <AppTrackingTransparency/AppTrackingTransparency.h>
@@ -32,7 +31,7 @@
 #define BUFPS_OPEN 0
 #endif
 
-@interface AppDelegate () <BUSplashAdDelegate, BUSplashCardDelegate, BUSplashZoomOutDelegate>
+@interface AppDelegate () <BUSplashAdDelegate, BUSplashCardDelegate>
 @property (nonatomic, assign) CFTimeInterval startTime;
 @property (nonatomic, strong) BUSplashAd *splashAd;
 @property (nonatomic, strong) AVAudioPlayer *audioPlay;
@@ -48,7 +47,11 @@
         self.window = keyWindow;
         self.window.rootViewController = [self rootViewController];
     }
-    // initialize AD SDK
+    if (@available(iOS 13.0, *)) {
+        self.window.overrideUserInterfaceStyle = UIUserInterfaceStyleLight;
+    }
+    
+    // initialize CSJ SDK
     [self setupBUAdSDK];
     
     return YES;
@@ -83,6 +86,7 @@
 #if __has_include(<BUAdTestMeasurement/BUAdTestMeasurement.h>)
     #if DEBUG
         // 测试工具
+        // debug环境引入
         [BUAdTestMeasurementConfiguration configuration].debugMode = YES;
     #endif
 #endif
@@ -104,7 +108,7 @@
                 // 聚合维度首次预缓存
                 [self useMediationPreload];
 //                 splash AD demo
-                [self addSplashAD];
+//                [self addSplashAD];
 //                 private config for demo
                 [self configDemo];
 //                 Setup live stream ad
@@ -166,7 +170,6 @@
     // 隐私合规
     configuration.mediation.limitPersonalAds = @(0);
     configuration.mediation.limitProgrammaticAds = @(0);
-//    configuration.mediation.forbiddenCAID = @(0);
     // 提前导入配置
     
     NSString *config = [NSBundle csjDemoResource_pathForResource:@"GroMore-config-ios-5000546" ofType:@"json"];
@@ -213,12 +216,10 @@
     // 穿山甲开屏广告
     BUSplashAd *splashAd = [[BUSplashAd alloc] initWithSlotID:express_splash_ID adSize:frame.size];
     splashAd.supportCardView = YES;
-    splashAd.supportZoomOutView = YES;
     
     // 不支持中途更改代理，中途更改代理会导致接收不到广告相关回调，如若存在中途更改代理场景，需自行处理相关逻辑，确保广告相关回调正常执行。
     splashAd.delegate = self;
     splashAd.cardDelegate = self;
-    splashAd.zoomOutDelegate = self;
     splashAd.tolerateTimeout = 3;
     /***
     广告加载成功的时候，会立即渲染WKWebView。
@@ -234,11 +235,11 @@
 }
 
 - (void)splashAdLoadFail:(nonnull BUSplashAd *)splashAd error:(BUAdError * _Nullable)error {
-    [self pbu_logWithSEL:_cmd msg:@""];
+    [self pbu_logWithSEL:_cmd msg:error ? [NSString stringWithFormat:@"%@", error] : @""];
 }
 
 - (void)splashAdRenderFail:(nonnull BUSplashAd *)splashAd error:(BUAdError * _Nullable)error {
-    [self pbu_logWithSEL:_cmd msg:@""];
+    [self pbu_logWithSEL:_cmd msg:error ? [NSString stringWithFormat:@"%@", error] : @""];
 }
 
 
@@ -287,28 +288,7 @@
 
 
 - (void)splashVideoAdDidPlayFinish:(nonnull BUSplashAd *)splashAd didFailWithError:(nullable NSError *)error {
-    [self pbu_logWithSEL:_cmd msg:@""];
-}
-
-
-- (void)splashZoomOutViewDidClick:(nonnull BUSplashAd *)splashAd {
-    [self pbu_logWithSEL:_cmd msg:@""];
-}
-
-
-- (void)splashZoomOutViewDidClose:(nonnull BUSplashAd *)splashAd {
-    [self pbu_logWithSEL:_cmd msg:@""];
-}
-
-- (void)splashZoomOutReadyToShow:(nonnull BUSplashAd *)splashAd {
-    
-    UIWindow *keyWindow = self.window;
-    
-    // 接入方法一：使用SDK提供动画接入
-    if (splashAd.zoomOutView) {
-        [splashAd showZoomOutViewInRootViewController:keyWindow.rootViewController];
-    }
-    [self pbu_logWithSEL:_cmd msg:@""];
+    [self pbu_logWithSEL:_cmd msg:error ? [NSString stringWithFormat:@"%@", error] : @""];
 }
 
 
