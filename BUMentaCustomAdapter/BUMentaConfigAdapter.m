@@ -19,7 +19,7 @@
 // @param initConfig 初始化配置，包括appid、appkey基本信息和部分用户传递配置
 - (void)initializeAdapterWithConfiguration:(BUMSdkInitConfig *_Nullable)initConfig {
     // 初始化network
-    [MUAPI enableLog:YES];
+    [MUAPI enableLog:NO];
     [MUAPI canUseIDFA:YES];
     
     [MUAPI startWithAppID:initConfig.appID appKey:initConfig.appKey finishBlock:^(BOOL success, NSError * _Nullable error) {}];

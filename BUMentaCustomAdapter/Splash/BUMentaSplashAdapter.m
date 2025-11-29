@@ -9,11 +9,13 @@
 #import <MentaUnifiedSDK/MentaUnifiedSDK-umbrella.h>
 
 @interface BUMentaSplashAdapter () <MentaUnifiedSplashAdDelegate>
+
 @property (nonatomic, strong) MentaUnifiedSplashAd *splashAd;
 @property (nonatomic, strong) UIView *customBottomView;
 @property (nonatomic, strong) NSString *ecpm;
 
 @end
+
 
 @implementation BUMentaSplashAdapter
 
@@ -31,7 +33,7 @@
     
     MUSplashConfig *config = [MUSplashConfig new];
     config.slotId = slotID;
-    config.tolerateTime = 5;
+//    config.tolerateTime = 5;
     config.adSize = size;
     config.bottomView = self.customBottomView;
     
@@ -41,9 +43,8 @@
 }
 
 - (void)showSplashAdInWindow:(nonnull UIWindow *)window parameter:(nonnull NSDictionary *)parameter {
+    NSLog(@"%s", __FUNCTION__);
     [self.splashAd showInWindow:window];
-    // 模拟广告展示回调
-    [self.bridge splashAdWillVisible:self];
 }
 
 - (void)dismissSplashAd {
@@ -101,6 +102,13 @@
 /// 开屏广告曝光
 - (void)menta_splashAdDidExpose:(MentaUnifiedSplashAd *_Nonnull)splashAd {
     NSLog(@"%s", __FUNCTION__);
+    [self.bridge splashAdWillVisible:self];
+}
+
+/// 开屏广告曝光失败
+- (void)menta_splashAd:(MentaUnifiedSplashAd *)splashAd didFailToExposeWithError:(NSError *)error {
+    NSLog(@"%s", __FUNCTION__);
+    [self.bridge splashAdDidShowFailed:self error:error];
 }
 
 /// 开屏广告 展现的广告信息 曝光之前会触发该回调

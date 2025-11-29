@@ -16,6 +16,7 @@
 
 @end
 
+
 @implementation BUMentaInterstitialAdapter
 
 - (BUMMediatedAdStatus)mediatedAdStatus {
@@ -106,6 +107,11 @@
 - (void)menta_interstitialAdDidExpose:(MentaUnifiedInterstitialAd *_Nonnull)interstitialAd {
     NSLog(@"%s", __FUNCTION__);
     [self.bridge interstitialAdDidVisible:self];
+}
+
+- (void)menta_interstitialAd:(MentaUnifiedInterstitialAd *)interstitialAd didFailToExposeWithError:(NSError *)error {
+    NSLog(@"%s", __FUNCTION__);
+    [self.bridge interstitialAdDidShowFailed:self error:error];
 }
 
 /// 插屏广告 展现的广告信息 曝光之前会触发该回调

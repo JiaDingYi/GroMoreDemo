@@ -20,15 +20,14 @@
 
 @end
 
+
 @implementation BUMentaBannerAdapter
 
 - (BUMMediatedAdStatus)mediatedAdStatus {
-    BUMMediatedAdStatus status = BUMMediatedAdStatusNormal;
-    return status;
+    return BUMMediatedAdStatusNormal;
 }
 
 - (void)loadBannerAdWithSlotID:(nonnull NSString *)slotID andSize:(CGSize)adSize parameter:(nullable NSDictionary *)parameter {
-    
     if (self.bannerAd) {
         [self.bannerAd destory];
         self.bannerAd.delegate = nil;

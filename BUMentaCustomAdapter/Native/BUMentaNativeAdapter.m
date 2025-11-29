@@ -19,6 +19,7 @@
 
 @end
 
+
 @implementation BUMentaNativeAdapter
 
 /// 当前加载的广告的状态，native模板广告
@@ -63,7 +64,7 @@
         MUNativeConfig *config = [MUNativeConfig new];
         config.slotId = slotID;
         config.viewController = self.bridge.viewControllerForPresentingModalView;
-        config.tolerateTime = 30;
+//        config.tolerateTime = 30;
         self.nativeAd = [[MentaUnifiedNativeAd alloc] initWithConfig:config];
         self.nativeAd.delegate = self;
         [self.nativeAd loadAd];
@@ -95,6 +96,10 @@
 //        BUMDCustomNativeData *ad = (BUMDCustomNativeData *)nativeAd;
 //        ad.viewController = viewController;
 //    }
+}
+
+- (void)unregisterClickableViewsForNativeAd:(nonnull id)nativeAd { 
+    
 }
 
 - (void)didReceiveBidResult:(BUMMediaBidResult *)result {
@@ -193,6 +198,11 @@
  */
 - (void)nativeExpressAdViewRenderFail:(MentaUnifiedNativeExpressAd *_Nonnull)nativeExpressAd nativeExpressAdObject:(MentaUnifiedNativeExpressAdObject *_Nonnull)nativeExpressAdObj {
     NSLog(@"%s", __FUNCTION__);
+    
+    NSError *error = [NSError errorWithDomain:@"MentaUnified"
+                                         code:0
+                                     userInfo:@{NSLocalizedDescriptionKey: @"unknown error"}];
+    [self.bridge nativeAd:self renderFailWithExpressView:nativeExpressAdObj.expressView andError:error];
 }
 
 /**
@@ -257,6 +267,15 @@
 - (void)menta_nativeAdViewWillExpose:(MentaUnifiedNativeAd *_Nullable)nativeAd adView:(UIView<MentaNativeAdViewProtocol> *_Nonnull)adView {
     NSLog(@"%s", __FUNCTION__);
     [self.bridge nativeAd:self didVisibleWithMediatedNativeAd:self.nativeAdData];
+}
+
+/**
+ 广告曝光失败回调
+ @param nativeAd MentaUnifiedNativeAd 实例
+ @param error 错误
+ */
+- (void)menta_nativeAd:(MentaUnifiedNativeAd *)nativeAd didFailToExposeWithError:(NSError *)error {
+    NSLog(@"%s", __FUNCTION__);
 }
 
 /**

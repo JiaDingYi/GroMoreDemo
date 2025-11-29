@@ -9,11 +9,13 @@
 #import <MentaUnifiedSDK/MentaUnifiedSDK-umbrella.h>
 
 @interface BUMentaRewardedAdapter () <MentaUnifiedRewardVideoDelegate>
+
 @property (nonatomic, strong) MentaUnifiedRewardVideoAd *rewardedVideo;
 @property (nonatomic, weak) UIViewController *viewController;
 @property (nonatomic, strong) NSString *ecpm;
 
 @end
+
 
 @implementation BUMentaRewardedAdapter
 
@@ -22,7 +24,6 @@
 }
 
 - (void)loadRewardedVideoAdWithSlotID:(nonnull NSString *)slotID andParameter:(nonnull NSDictionary *)parameter {
-    
     if (self.rewardedVideo) {
         [self.rewardedVideo destory];
         self.rewardedVideo.delegate = nil;
@@ -113,6 +114,12 @@
 - (void)menta_rewardVideoAdDidExpose:(MentaUnifiedRewardVideoAd *_Nonnull)rewardVideoAd {
     NSLog(@"%s", __FUNCTION__);
     [self.bridge rewardedVideoAdDidVisible:self];
+}
+
+/// 激励视频广告曝光失败
+- (void)menta_rewardVideoAd:(MentaUnifiedRewardVideoAd *)rewardVideoAd didFailToExposeWithError:(NSError *)error {
+    NSLog(@"%s", __FUNCTION__);
+    [self.bridge rewardedVideoAdDidShowFailed:self error:error];
 }
 
 /// 激励视频广告播放达到激励条件回调
